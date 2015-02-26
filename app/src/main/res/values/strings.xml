@@ -6,4 +6,7 @@
     <string name="solicitud">Necesito sangre y plaquetas O+ positivo,por favor los que me puedan ayudarme porfavor pongase en contacto conmigo mi numero es 987645321</string>
     <string name="respuesta">Hola,Alan yo te ayudar ya mismo, ya te envie mis datos</string>
     <string name="title_activity_enviar_mensaje">EnviarMensaje</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
