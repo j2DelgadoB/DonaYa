@@ -61,7 +61,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public void onBindViewHolder(PostViewHolder postViewHolder, int i) {
         Post po= postList.get(i);
         PostViewHolder.solicitud.setText(po.getSolicita());
-        PostViewHolder.respuesta.setText(po.getRespuesta().get(0));//con for getRespuesta().size crear text views de respuesta maximo 2 y opcion para ampliar
-        Log.e("en el adapter",po.getRespuesta().get(0));
+        PostViewHolder.respuesta.setText( po.getRespuesta().get(0).getResponde());//con for getRespuesta().size crear text views de respuesta maximo 2 y opcion para ampliar
+        Log.e("en el adapter", po.getRespuesta().get(0).getResponde());
     }
 }

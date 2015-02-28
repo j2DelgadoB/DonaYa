@@ -7,6 +7,18 @@
     <string name="respuesta">Hola,Alan yo te ayudar ya mismo, ya te envie mis datos</string>
     <string name="title_activity_enviar_mensaje">EnviarMensaje</string>
 
+    <string-array name="grupo_sanguineo">
+        <item>A+</item>
+        <item>B+</item>
+        <item>O+</item>
+        <item>AB+</item>
+        <item>A-</item>
+        <item>B-</item>
+        <item>O-</item>
+        <item>AB-</item>
+
+    </string-array>
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

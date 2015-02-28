@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.jose.myapplication.R;
 import com.example.jose.myapplication.adapters.PostAdapter;
 import com.example.jose.myapplication.models.Post;
+import com.example.jose.myapplication.models.Respuesta;
 
 import java.util.ArrayList;
 
@@ -35,18 +36,20 @@ public class BandejaFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ArrayList<Post> postList = new ArrayList<Post>();
-
+     /*Pruebas*/
         Post  post1 = new Post();
         post1.setSolicita("Necesito sangre y plaquetas O+ positivo,por favor los que me puedan ayudarme " +
                         "porfavor pongase en contacto conmigo mi numero es 987645321"
         );
-        ArrayList<String> rpta= new ArrayList<String>();
-        rpta.add("Hola,Alan yo te ayudar ya mismo, ya te envie mis datos");
-        Log.e("en el array",rpta.get(0));
+        ArrayList<Respuesta> rpta= new ArrayList<Respuesta>();
+        Respuesta responde = new Respuesta();
+        responde.setResponde("Hola,Alan yo te ayudar ya mismo, ya te envie mis datos");
+        rpta.add(responde);
+        Log.e("en el array", rpta.get(0).getResponde());
         post1.setRespuesta(rpta);
         postList.add(post1);
         postList.add(post1);
-
+     /**/
         RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts));

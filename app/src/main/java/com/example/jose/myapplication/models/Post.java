@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Post {
     protected String solicita;
-    protected ArrayList<String> respuesta;
+    protected ArrayList<Respuesta> respuesta;
 
     public String getSolicita() {
         return solicita;
@@ -17,11 +17,11 @@ public class Post {
         this.solicita = solicita;
     }
 
-    public ArrayList<String> getRespuesta() {
+    public ArrayList<Respuesta> getRespuesta() {
         return respuesta;
     }
 
-    public void setRespuesta(ArrayList<String> respuesta) {
+    public void setRespuesta(ArrayList<Respuesta> respuesta) {
         this.respuesta = respuesta;
     }
 }

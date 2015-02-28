@@ -12,11 +12,13 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.example.jose.myapplication.fragments.BandejaFragment;
+import com.example.jose.myapplication.fragments.CrearMensaje;
 
 
 public class MainActivity extends ActionBarActivity {
     private Fragment[] fragments = new Fragment[]{
     new BandejaFragment(),
+    new CrearMensaje(),
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,18 @@ public class MainActivity extends ActionBarActivity {
             fragmentTransaction.add(R.id.main_home,fragment).hide(fragment);
 
         }
-        fragmentTransaction.show(fragments[0]).commit();
+       /*
+        String posi=this.getIntent().getStringExtra("pos");
+        if(posi==null){
+            //default
+            */
+            fragmentTransaction.show(fragments[1]).commit();//0
+        /*}else{
+            int p= Integer.parseInt(posi);
+            fragmentTransaction.show(fragments[p]).commit();
+        }*/
+
+
 
     }
 
