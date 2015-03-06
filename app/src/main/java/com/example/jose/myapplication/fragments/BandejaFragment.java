@@ -1,6 +1,7 @@
 package com.example.jose.myapplication.fragments;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,16 +11,27 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.jose.myapplication.R;
 import com.example.jose.myapplication.adapters.PostAdapter;
 import com.example.jose.myapplication.models.Post;
 import com.example.jose.myapplication.models.Respuesta;
+import com.example.jose.myapplication.utils.JSONParser;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BandejaFragment extends Fragment {
-
+    JSONParser jParser = new JSONParser();
+    JSONArray msjPost = null;
+    ArrayList<Post> postList = new ArrayList<Post>();
     public BandejaFragment() {
         // Required empty public constructor
     }
@@ -29,14 +41,21 @@ public class BandejaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bandeja, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_bandeja, container, false);
+        //siempre ejecutando un hilo para que se muestre los mensajes de los posts actualizados de la base de datos
+       mostrarPost post= new mostrarPost();
+       post.execute();
+
+
+        return rootView;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+    /*Pruebas
         ArrayList<Post> postList = new ArrayList<Post>();
-     /*Pruebas*/
+
         Post  post1 = new Post();
         post1.setSolicita("Necesito sangre y plaquetas O+ positivo,por favor los que me puedan ayudarme " +
                         "porfavor pongase en contacto conmigo mi numero es 987645321"
@@ -49,14 +68,113 @@ public class BandejaFragment extends Fragment {
         post1.setRespuesta(rpta);
         postList.add(post1);
         postList.add(post1);
-     /**/
+        */
         RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts));
+        recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity()));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+    }
 
+    private class mostrarPost extends AsyncTask<Void,Void,String> {
+        JSONObject json = null;
+
+        @Override
+        protected String doInBackground(Void... params) {
+            List<NameValuePair> par = new ArrayList<NameValuePair>();
+            par.add(new BasicNameValuePair("mostrar_todo","1"));
+            try {
+                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_post.php","POST",par);
+                Log.d("Mi json 1:", json.toString());
+                int success = json.getInt("success");
+                if (success==1){
+                    Log.d("resultado:","correcto");
+
+
+                    msjPost = json.getJSONArray("msjsPost");
+                    Log.d("Log de msjPost", String.valueOf(msjPost.length()));
+                    int next=0;
+                    for (int i=0; i< msjPost.length();i++){
+                        Log.d("for principal",String.valueOf(i));
+                        Post  post = new Post();
+                        ArrayList<Respuesta> arrayRpta= new ArrayList<Respuesta>();
+                        Respuesta respuesta = new Respuesta();
+
+                        JSONObject c = msjPost.getJSONObject(i);
+                        String idPost= c.getString("idPost");
+                        String msjSolicitud= c.getString("msjSolicitud");
+                        post.setSolicita(msjSolicitud);
+                        String msjRespuesta = c.getString("msjRespuesta");
+                        respuesta.setResponde(msjRespuesta);
+                        arrayRpta.add(respuesta);
+                        Log.d("id:",idPost);
+                        for (next=i+1;next<msjPost.length();next++) {
+                            JSONObject d = msjPost.getJSONObject(next);
+                            Log.d("id post next:",d.getString("idPost"));
+                            if (idPost.equals(d.getString("idPost"))) {
+                                String msjRespuestanext = d.getString("msjRespuesta");
+                                //agregar las respuestas al arrayRpta
+                                Respuesta respuestanext = new Respuesta();
+                                respuestanext.setResponde(msjRespuestanext);
+
+                                arrayRpta.add(respuestanext);
+                                Log.d("Respuestaconsecutiva:","si");
+                            } else {
+
+
+
+                                break;
+                            }
+
+                        }
+                        Log.d("log array Rpta", String.valueOf(arrayRpta.size()));
+                        post.setRespuesta(arrayRpta);
+                        postList.add(post);
+                        i=next-1;
+
+                    }
+
+
+                }//verificar su conexion a internet*/
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            /*EditText rpta_edit= (EditText) getActivity().findViewById(R.id.respuesta_editText);
+            rpta_edit.setOnKeyListener(new View.OnKeyListener(){
+
+            });*/
+
+            ///OBTENGO EL JSON x ahora de todos los posts
+
+
+            ///CREO VARIABLES DEL MODELO POST
+
+            return null;
+        }
+        protected void onPostExecute(String file){
+            /*Log de postList*/
+            Log.d("Log de postList", String.valueOf(postList.size()));
+
+            for (int i=0;i<postList.size();i++){
+                Post p1= new Post();
+                p1=postList.get(i);
+                Log.d("Este es el post:",p1.getSolicita());
+                for (int j=0;j<p1.getRespuesta().size();j++){
+                    Log.d("Este es la respuesta numero "+j+":",p1.getRespuesta().get(j).getResponde());
+                }
+            }
+
+            /* */
+
+            RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view);
+            recyclerView.setHasFixedSize(true);
+
+            recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity()));
+            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
+        }
 
 
     }

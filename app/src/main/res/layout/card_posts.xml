@@ -12,7 +12,7 @@
         android:clickable="true"
         android:layout_margin="10dp"
         android:layout_width="fill_parent"
-        android:layout_height="360dp"
+        android:layout_height="fill_parent"
         card_view:cardCornerRadius="4dp">
 
         <RelativeLayout
@@ -28,12 +28,13 @@
                 android:id="@+id/fotoSolicitante"
                 android:layout_alignTop="@+id/textSolicitud"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:src="@drawable/quickcontactbadge" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="150dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/solicitud"
                 android:padding="10dp"
                 android:id="@+id/textSolicitud"
@@ -42,33 +43,27 @@
                 android:layout_toRightOf="@+id/fotoSolicitante"
                 android:layout_toEndOf="@+id/fotoSolicitante" />
 
-            <QuickContactBadge
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:id="@+id/fotoDonador"
-                android:layout_alignTop="@+id/textRpta"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:text="@string/respuesta"
-                android:layout_marginTop="35dp"
-                android:padding="10dp"
-                android:id="@+id/textRpta"
-                android:layout_below="@+id/textSolicitud"
-                android:layout_toRightOf="@+id/fotoDonador"
-                android:layout_toEndOf="@+id/fotoDonador" />
+            <ListView
+                android:id="@+id/seccion_respuestas"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/respuesta_editText"
+                android:layout_alignStart="@+id/respuesta_editText"
+                android:layout_above="@+id/respuesta_editText"
+                android:layout_below="@+id/textSolicitud"></ListView>
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
+                android:layout_marginTop="10dp"
+                android:id="@+id/respuesta_editText"
                 android:hint="Escribir una respuesta"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:gravity="bottom"
+
+                />
 
 
         </RelativeLayout>

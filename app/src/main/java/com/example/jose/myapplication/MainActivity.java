@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
         if(posi==null){
             //default
             */
-            fragmentTransaction.show(fragments[1]).commit();//0
+            fragmentTransaction.show(fragments[0]).commit();//0
         /*}else{
             int p= Integer.parseInt(posi);
             fragmentTransaction.show(fragments[p]).commit();

@@ -90,21 +90,9 @@ public class CrearMensaje extends Fragment {
             Spinner sp = (Spinner) getActivity().findViewById(R.id.spinnerCrearPost);
             EditText tel= (EditText)getActivity().findViewById(R.id.crearPostTel);
             Log.i("captura dato nombres",nombres.getText().toString());
-            String grupoSanguineo="O+";
-            /*sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String grupoSanguineo = parent.getItemAtPosition(position).toString();
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });*/
             par.add(new BasicNameValuePair("nombres",nombres.getText().toString()));
             par.add(new BasicNameValuePair("apellidos",apellidos.getText().toString()));
-            par.add(new BasicNameValuePair("tipoSangre",grupoSanguineo));
+            par.add(new BasicNameValuePair("tipoSangre",sp.getSelectedItem().toString()));
             par.add(new BasicNameValuePair("telefono",tel.getText().toString()));
             Log.i("captura dato nombres",tel.getText().toString());
             try {
