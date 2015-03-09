@@ -12,8 +12,14 @@
         android:clickable="true"
         android:layout_margin="10dp"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="720dp"
         card_view:cardCornerRadius="4dp">
+
+        <TextView
+            android:id="@+id/idPostHidden"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,8 +29,8 @@
             android:paddingBottom="@dimen/activity_vertical_margin">
 
             <QuickContactBadge
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:id="@+id/fotoSolicitante"
                 android:layout_alignTop="@+id/textSolicitud"
                 android:layout_alignParentLeft="true"
@@ -33,8 +39,7 @@
 
             <TextView
                 android:layout_width="fill_parent"
-                android:layout_height="150dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_height="140dp"
                 android:text="@string/solicitud"
                 android:padding="10dp"
                 android:id="@+id/textSolicitud"
@@ -48,22 +53,40 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/respuesta_editText"
-                android:layout_alignStart="@+id/respuesta_editText"
-                android:layout_above="@+id/respuesta_editText"
+                android:layout_height="500dp"
+                android:layout_alignLeft="@+id/layout_rpta"
+                android:layout_alignStart="@+id/layout_rpta"
+                android:layout_above="@+id/layout_rpta"
                 android:layout_below="@+id/textSolicitud"></ListView>
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TableLayout
+                android:id="@+id/layout_rpta"
+                android:orientation="vertical" android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:gravity="bottom"
+                android:layout_alignParentBottom="true"
+            >
+                <TableRow>
+                <EditText
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:maxLength="10"
                 android:layout_marginTop="10dp"
                 android:id="@+id/respuesta_editText"
                 android:hint="Escribir una respuesta"
-                android:layout_alignParentBottom="true"
-                android:gravity="bottom"
-
                 />
+
+                    <Button
+                        android:id="@+id/btnEnviarRpta"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:text="Enviar"
+                        android:layout_gravity="right"
+                        android:layout_column="17" />
+                </TableRow>
+            </TableLayout>
 
 
         </RelativeLayout>

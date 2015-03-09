@@ -5,8 +5,8 @@
 
 
     <QuickContactBadge
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/foto"
         android:layout_alignTop="@+id/list_item_respuesta_textview"
         android:layout_alignParentLeft="true"

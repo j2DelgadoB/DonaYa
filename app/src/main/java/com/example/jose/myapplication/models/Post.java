@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Created by jose on 26/02/2015.
  */
 public class Post {
+    protected String id;//Por si un post de la bd xejemp el post3 quedaria posts con ids 4 2 1/entra a postList con 0 1 2
     protected String solicita;
     protected ArrayList<Respuesta> respuesta;
 
@@ -23,5 +24,13 @@ public class Post {
 
     public void setRespuesta(ArrayList<Respuesta> respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

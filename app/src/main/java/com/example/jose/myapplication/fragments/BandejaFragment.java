@@ -8,11 +8,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.jose.myapplication.R;
 import com.example.jose.myapplication.adapters.PostAdapter;
@@ -47,6 +49,10 @@ public class BandejaFragment extends Fragment {
        post.execute();
 
 
+
+
+
+
         return rootView;
     }
 
@@ -74,6 +80,7 @@ public class BandejaFragment extends Fragment {
         recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity()));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
 
     }
 
@@ -104,6 +111,7 @@ public class BandejaFragment extends Fragment {
                         JSONObject c = msjPost.getJSONObject(i);
                         String idPost= c.getString("idPost");
                         String msjSolicitud= c.getString("msjSolicitud");
+                        post.setId(idPost);
                         post.setSolicita(msjSolicitud);
                         String msjRespuesta = c.getString("msjRespuesta");
                         respuesta.setResponde(msjRespuesta);
@@ -121,9 +129,6 @@ public class BandejaFragment extends Fragment {
                                 arrayRpta.add(respuestanext);
                                 Log.d("Respuestaconsecutiva:","si");
                             } else {
-
-
-
                                 break;
                             }
 
@@ -141,10 +146,7 @@ public class BandejaFragment extends Fragment {
             }catch (Exception e){
                 e.printStackTrace();
             }
-            /*EditText rpta_edit= (EditText) getActivity().findViewById(R.id.respuesta_editText);
-            rpta_edit.setOnKeyListener(new View.OnKeyListener(){
 
-            });*/
 
             ///OBTENGO EL JSON x ahora de todos los posts
 
@@ -160,7 +162,7 @@ public class BandejaFragment extends Fragment {
             for (int i=0;i<postList.size();i++){
                 Post p1= new Post();
                 p1=postList.get(i);
-                Log.d("Este es el post:",p1.getSolicita());
+                Log.d("Post "+p1.getId()+":",p1.getSolicita());
                 for (int j=0;j<p1.getRespuesta().size();j++){
                     Log.d("Este es la respuesta numero "+j+":",p1.getRespuesta().get(j).getResponde());
                 }
@@ -174,6 +176,25 @@ public class BandejaFragment extends Fragment {
             recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity()));
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
+            /*
+            final EditText rpta_edit= (EditText) getActivity().findViewById(R.id.respuesta_editText);
+            Log.d("este editText",rpta_edit.getText().toString()+" hola");
+            rpta_edit.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View v, int keyCode, KeyEvent event) {
+                    // If the event is a key-down event on the "enter" button
+                    if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                            (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                        // Perform action on key press
+                        Toast.makeText(getActivity(), rpta_edit.getText() + " " + rpta_edit.getId(), Toast.LENGTH_SHORT).show();
+
+
+                        return true;
+                    }
+                    return false;
+                }
+            });*/
+
         }
 
 
