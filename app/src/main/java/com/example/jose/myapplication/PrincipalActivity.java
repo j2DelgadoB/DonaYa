@@ -3,6 +3,9 @@ package com.example.jose.myapplication;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,9 +16,10 @@ import android.widget.LinearLayout;
 
 import com.example.jose.myapplication.fragments.BandejaFragment;
 import com.example.jose.myapplication.fragments.CrearMensaje;
+import com.example.jose.myapplication.fragments.LoginFragment;
 
 
-public class MainActivity extends ActionBarActivity {
+public class PrincipalActivity extends ActionBarActivity {
     private Fragment[] fragments = new Fragment[]{
     new BandejaFragment(),
     new CrearMensaje(),
@@ -25,12 +29,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /*
-        RecyclerView recList = (RecyclerView) findViewById(R.id.card_view);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
-*/
+
         FragmentManager manager = getFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
 
@@ -63,16 +62,23 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            //Boton de cerrar sesión
+            case R.id.closessesion:
+                //Borramos el usuario almacenado en preferencias y volvemos a la pantalla de login
+                SharedPreferences settings = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("username", "");
+                editor.putString("password", "");
+                //Confirmamos el almacenamiento.
+                editor.commit();
+                //Volvemos a la pantalla de Login
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

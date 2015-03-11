@@ -1,7 +1,6 @@
 package com.example.jose.myapplication.fragments;
 
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -17,7 +16,6 @@ import android.widget.Spinner;
 import android.R.layout;
 import android.widget.Toast;
 
-import com.example.jose.myapplication.MainActivity;
 import com.example.jose.myapplication.R;
 import com.example.jose.myapplication.utils.JSONParser;
 

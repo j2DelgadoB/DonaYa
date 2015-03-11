@@ -3,9 +3,7 @@ package com.example.jose.myapplication.adapters;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,9 +15,7 @@ import android.widget.TextView;
 import android.view.LayoutInflater;
 import android.widget.Toast;
 
-import com.example.jose.myapplication.MainActivity;
 import com.example.jose.myapplication.R;
-import com.example.jose.myapplication.fragments.BandejaFragment;
 import com.example.jose.myapplication.models.Post;
 import com.example.jose.myapplication.utils.JSONParser;
 
