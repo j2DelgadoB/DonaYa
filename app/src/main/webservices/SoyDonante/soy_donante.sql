@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-03-2015 a las 08:08:47
+-- Tiempo de generación: 12-03-2015 a las 18:35:33
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -67,6 +67,27 @@ INSERT INTO `respuesta` (`id`, `idPost`, `msjRespuesta`) VALUES
 (5, 2, 'Yo igual numero 2'),
 (6, 3, 'Yo te ayudo num3'),
 (7, 2, 'Yo tmb num2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `username`, `password`, `email`) VALUES
+(1, 'jose', 'admin', 'jose@git.io');
 
 --
 -- Restricciones para tablas volcadas

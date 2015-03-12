@@ -1,36 +1,64 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:id="@+id/main_home"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Home"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Home"
     >
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:id="@+id/main_home"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/header_bg"
+            android:scaleType="centerCrop"
+            android:id="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/user"
+            android:id="@+id/imageView2"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/titulo_fragmento"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="titulo de fragmento"
+            android:layout_below="@+id/imageView"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+        <!-- Framelayout to display Fragments -->
+
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titulo_fragmento"
+          />
+        <!-- Listview to display slider menu -->
+    </RelativeLayout>
+        <ListView
+            android:id="@+id/list_slidermenu"
+            android:layout_width="240dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"
+            android:listSelector="@drawable/list_selector"
+            android:background="@color/list_background"/>
 
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="180dp"
-        android:src="@drawable/header_bg"
-        android:scaleType="centerCrop"
-        android:id="@+id/imageView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:src="@drawable/user"
-        android:id="@+id/imageView2"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Otro bar action"
-        android:id="@+id/tabsHome"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>

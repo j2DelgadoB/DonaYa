@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_below="@+id/tabsHome"
+    android:padding="5dp"
+    android:scrollbars="vertical"
     tools:context="com.example.jose.myapplication.fragments.BandejaFragment">
     <android.support.v7.widget.RecyclerView
 
