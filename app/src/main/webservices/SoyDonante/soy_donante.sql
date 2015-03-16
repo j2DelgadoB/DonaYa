@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-03-2015 a las 18:35:33
+-- Tiempo de generación: 16-03-2015 a las 10:22:10
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -23,23 +23,47 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `cita`
+--
+
+CREATE TABLE IF NOT EXISTS `cita` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) NOT NULL,
+  `direccion` varchar(350) COLLATE utf8_unicode_ci NOT NULL,
+  `fechaCita` date NOT NULL,
+  `horaCita` time NOT NULL,
+  `nomCitaDonante` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `apeCitaDonante` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `tipoSangre` varchar(75) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idUser` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `post`
 --
 
 CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) NOT NULL,
   `msjSolicitud` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  PRIMARY KEY (`id`),
+  KEY `idUser` (`idUser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `post`
 --
 
-INSERT INTO `post` (`id`, `msjSolicitud`) VALUES
-(1, 'Necesito sangre y plaquetas A+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 345677767676'),
-(2, 'Necesito sangre y plaquetas B+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 345677767676'),
-(3, 'Necesito sangre y plaquetas O+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 5226823');
+INSERT INTO `post` (`id`, `idUser`, `msjSolicitud`) VALUES
+(1, 1, 'Necesito sangre y plaquetas A+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 345677767676'),
+(2, 1, 'Necesito sangre y plaquetas B+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 345677767676'),
+(3, 1, 'Necesito sangre y plaquetas O+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 5226823'),
+(4, 1, 'Necesito sangre y plaquetas AB+,porfavor los que me pudieran ayudar pongase en contacto conmigo, pueden llamar al numero 5432765');
 
 -- --------------------------------------------------------
 
@@ -92,6 +116,18 @@ INSERT INTO `usuario` (`id`, `username`, `password`, `email`) VALUES
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `cita`
+--
+ALTER TABLE `cita`
+  ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `usuario` (`id`);
+
+--
+-- Filtros para la tabla `post`
+--
+ALTER TABLE `post`
+  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `usuario` (`id`);
 
 --
 -- Filtros para la tabla `respuesta`

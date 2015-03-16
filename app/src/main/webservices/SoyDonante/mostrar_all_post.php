@@ -9,7 +9,7 @@ $db = new DB_CONNECT();
 $response= array();
 $response["msjsPost"]= array();
 if (isset($_POST["mostrar_todo"])) {
-	$sql = sprintf("SELECT a.id, a.msjSolicitud, b.msjRespuesta FROM post a left join respuesta b on a.id = b.idPost ORDER BY a.id DESC");
+	$sql = sprintf("SELECT a.id, a.idUser, a.msjSolicitud, b.msjRespuesta FROM post a left join respuesta b on a.id = b.idPost left join usuario u on a.idUser = u.id ORDER BY a.id DESC");
 	$result = mysql_query($sql) or die(mysql_error());
 	while ($row = mysql_fetch_array($result)) {
 	$data_post_rpta = array();

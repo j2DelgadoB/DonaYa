@@ -3,7 +3,7 @@ package com.example.jose.myapplication.fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -114,6 +114,7 @@ public class BandejaFragment extends Fragment {
                         post.setId(idPost);
                         post.setSolicita(msjSolicitud);
                         String msjRespuesta = c.getString("msjRespuesta");
+
                         respuesta.setResponde(msjRespuesta);
                         arrayRpta.add(respuesta);
                         Log.d("id:",idPost);

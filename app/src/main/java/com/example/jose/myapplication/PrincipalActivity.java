@@ -1,15 +1,18 @@
 package com.example.jose.myapplication;
 
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 
@@ -19,13 +22,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.jose.myapplication.adapters.MenuDrawerListAdapter;
+import com.example.jose.myapplication.adapters.TabsPagerAdapter;
 import com.example.jose.myapplication.fragments.BandejaFragment;
+import com.example.jose.myapplication.fragments.Cita1Fragment;
+
+import com.example.jose.myapplication.fragments.CitaFragment;
 import com.example.jose.myapplication.fragments.CrearMensaje;
-import com.example.jose.myapplication.fragments.LoginFragment;
 import com.example.jose.myapplication.models.MenuDrawerItem;
 
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -33,23 +39,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 
-public class PrincipalActivity extends ActionBarActivity {
-    private Fragment[] fragments = new Fragment[]{
-    new BandejaFragment(),
-    new CrearMensaje(),
-    };
+public class PrincipalActivity extends ActionBarActivity implements ActionBar.TabListener {
 
+    private ViewPager viewPager;
+    private TabsPagerAdapter mAdapter;
+    private ActionBar actionBar;
 
+    private String[] tabs = { "Paso 1", "Paso 2", "Finalizar" };
+    /**/
     private TextView titleFragment;
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
     ArrayList<MenuDrawerItem> navDrawerItems;
     private MenuDrawerListAdapter adapter;
+
     private ListView mDrawerList;
 
     private DrawerLayout mDrawerLayout;
@@ -112,13 +118,31 @@ public class PrincipalActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         titleFragment=(TextView)findViewById(R.id.titulo_fragmento);
-        titleFragment.setText("Bandeja");
+        titleFragment.setText("Lista de Contactos");
         if (savedInstanceState == null) {
             // on first time display view for first nav item
-            displayView(0);
+            //fragment lista de contactos
         }
 
     }
+
+    @Override
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+        // on tab selected
+        // show respected fragment view
+        viewPager.setCurrentItem(tab.getPosition());
+    }
+
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
     private class SlideMenuClickListener implements
             ListView.OnItemClickListener {
         @Override
@@ -141,7 +165,8 @@ public class PrincipalActivity extends ActionBarActivity {
                 fragment = new CrearMensaje();
                 break;
             case 2:
-                Log.d("2","Aun falta implementar");
+                fragment = new CitaFragment();
+                //citas
                 break;
             case 3:
                 Log.d("3", "falta implementar");
@@ -154,20 +179,61 @@ public class PrincipalActivity extends ActionBarActivity {
         }
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getFragmentManager();
+            FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
 
             // update selected item and title, then close the drawer
+
            mDrawerList.setItemChecked(position, true);
            mDrawerList.setSelection(position);
            //setTitle(navMenuTitles[position]);
           titleFragment.setText(navMenuTitles[position]);
-            mDrawerLayout.closeDrawer(mDrawerList);
+          titleFragment.setText("Cita para donar");
+          mDrawerLayout.closeDrawer(mDrawerList);
             //mDrawerLayout.closeDrawers();
+
+          if(position==2){
+
+              viewPager = (ViewPager) findViewById(R.id.mi_pager);
+              actionBar =  getSupportActionBar();
+              mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+
+              viewPager.setAdapter(mAdapter);
+              actionBar.setHomeButtonEnabled(false);
+              actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+              // Adding Tabs
+              for (String tab_name : tabs) {
+                  actionBar.addTab(actionBar.newTab().setText(tab_name)
+                          .setTabListener(this));
+              }
+
+              /**
+               * on swiping the viewpager make respective tab selected
+               * */
+              viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+                  @Override
+                  public void onPageSelected(int position) {
+                      // on changing the page
+                      // make respected tab selected
+                      actionBar.setSelectedNavigationItem(position);
+                  }
+
+                  @Override
+                  public void onPageScrolled(int arg0, float arg1, int arg2) {
+                  }
+
+                  @Override
+                  public void onPageScrollStateChanged(int arg0) {
+                  }
+              });
+          }
         } else {
             // error in creating fragment
             Log.e("MainActivity", "Error in creating fragment");
         }
+
     }
 
     @Override

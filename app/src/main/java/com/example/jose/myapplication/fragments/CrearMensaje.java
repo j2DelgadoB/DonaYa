@@ -1,9 +1,10 @@
 package com.example.jose.myapplication.fragments;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 import android.R.layout;
 import android.widget.Toast;
 
+import com.example.jose.myapplication.PrincipalActivity;
 import com.example.jose.myapplication.R;
 import com.example.jose.myapplication.utils.JSONParser;
 
@@ -87,12 +89,15 @@ public class CrearMensaje extends Fragment {
             EditText apellidos = (EditText)getActivity().findViewById(R.id.crearPostApellido);
             Spinner sp = (Spinner) getActivity().findViewById(R.id.spinnerCrearPost);
             EditText tel= (EditText)getActivity().findViewById(R.id.crearPostTel);
+            String idUser = getActivity().getIntent().getStringExtra("MyID");
             Log.i("captura dato nombres",nombres.getText().toString());
             par.add(new BasicNameValuePair("nombres",nombres.getText().toString()));
             par.add(new BasicNameValuePair("apellidos",apellidos.getText().toString()));
             par.add(new BasicNameValuePair("tipoSangre",sp.getSelectedItem().toString()));
             par.add(new BasicNameValuePair("telefono",tel.getText().toString()));
-            Log.i("captura dato nombres",tel.getText().toString());
+            par.add(new BasicNameValuePair("idUser",idUser));
+            Log.d("Mi id de usuario",idUser);
+            Log.i("captura dato telefono",tel.getText().toString());
             try {
                 json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/crear_post.php","GET",par);
                 Log.d("Mi json 1:", json.toString());
@@ -100,7 +105,8 @@ public class CrearMensaje extends Fragment {
                 if (success==1){
                     Log.d("","se guardo en la base de datos correctamente");
                 }//verificar su conexion a internet*/
-
+                Intent i= new Intent(getActivity(), PrincipalActivity.class);
+                startActivity(i);
             }catch (Exception e){
               e.printStackTrace();
             }

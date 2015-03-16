@@ -7,6 +7,10 @@
     <string name="respuesta">Hola,Alan yo te ayudar ya mismo, ya te envie mis datos</string>
     <string name="title_activity_enviar_mensaje">EnviarMensaje</string>
 
+    <string name="mensaje_cita1">Podria reservar una cita minimo con 3 dias de anticipacion.Para cambiar una cita, por favor llamar al 012341124.Si no le contestamos em un plazo de 48 horas porfavor llamar.Nuestro horario de atención es de L-V 9AM-6PM.
+    </string>
+
+
     <string-array name="grupo_sanguineo">
         <item>A+</item>
         <item>B+</item>

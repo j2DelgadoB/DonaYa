@@ -101,6 +101,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         PostViewHolder.solicitud.setText(po.getSolicita());
         rptaxpost = new ArrayList<String>();
         for (int j=0;j<po.getRespuesta().size();j++){
+            if(po.getRespuesta().get(j).getResponde()!=null)
             rptaxpost.add(po.getRespuesta().get(j).getResponde());
         }
         final EditText rpta_temp = PostViewHolder.rpta_actual;
