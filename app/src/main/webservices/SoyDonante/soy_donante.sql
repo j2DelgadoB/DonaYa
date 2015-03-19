@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2015 a las 10:22:10
+-- Tiempo de generación: 19-03-2015 a las 20:53:46
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `cita` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idUser` int(11) NOT NULL,
-  `direccion` varchar(350) COLLATE utf8_unicode_ci NOT NULL,
-  `fechaCita` date NOT NULL,
-  `horaCita` time NOT NULL,
+  `distrito` varchar(350) COLLATE utf8_unicode_ci NOT NULL,
+  `fechaCita` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `horaCita` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `nomCitaDonante` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `apeCitaDonante` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `tipoSangre` varchar(75) COLLATE utf8_unicode_ci NOT NULL,
@@ -40,6 +40,61 @@ CREATE TABLE IF NOT EXISTS `cita` (
   PRIMARY KEY (`id`),
   KEY `idUser` (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contacto`
+--
+
+CREATE TABLE IF NOT EXISTS `contacto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) NOT NULL,
+  `idAmigo` int(11) NOT NULL,
+  `solicitud` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idUser` (`idUser`),
+  KEY `idAmigo` (`idAmigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`id`, `idUser`, `idAmigo`, `solicitud`) VALUES
+(1, 1, 2, 'enviada'),
+(2, 2, 1, 'aceptada');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `perfil`
+--
+
+CREATE TABLE IF NOT EXISTS `perfil` (
+  `nombres` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `apellidos` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `tipoSangre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `cuentaFace` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `cuentaTwitt` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `cuentaGoogle` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `fondo` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `foto` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idUser` (`idUser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `perfil`
+--
+
+INSERT INTO `perfil` (`nombres`, `apellidos`, `tipoSangre`, `email`, `telefono`, `cuentaFace`, `cuentaTwitt`, `cuentaGoogle`, `fondo`, `foto`, `id`, `idUser`) VALUES
+('wilson', 'flores', 'A+', 'wilsonft@hol.es', '5219083', 'facebook.com/wilson', '@wilsonft', 'googl.pl/willson', '', '', 1, 2),
+('jose', 'delgado bustamante', 'O+', 'j2dk@hel.es', '974521645', 'face.com/fdjose', '@jDebu', 'googl.pl/josebus', '', '', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
   `msjRespuesta` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idPost` (`idPost`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `respuesta`
@@ -90,7 +145,8 @@ INSERT INTO `respuesta` (`id`, `idPost`, `msjRespuesta`) VALUES
 (4, 2, 'Hola yo tamb te ayudo num2'),
 (5, 2, 'Yo igual numero 2'),
 (6, 3, 'Yo te ayudo num3'),
-(7, 2, 'Yo tmb num2');
+(7, 2, 'Yo tmb num2'),
+(8, 1, '');
 
 -- --------------------------------------------------------
 
@@ -104,14 +160,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `username`, `password`, `email`) VALUES
-(1, 'jose', 'admin', 'jose@git.io');
+(1, 'jose', 'admin', 'jose@git.io'),
+(2, 'wilsonft', '5219083', 'kenyo@hol.es');
 
 --
 -- Restricciones para tablas volcadas
@@ -122,6 +179,19 @@ INSERT INTO `usuario` (`id`, `username`, `password`, `email`) VALUES
 --
 ALTER TABLE `cita`
   ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `usuario` (`id`);
+
+--
+-- Filtros para la tabla `contacto`
+--
+ALTER TABLE `contacto`
+  ADD CONSTRAINT `contacto_ibfk_2` FOREIGN KEY (`idAmigo`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `contacto_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `usuario` (`id`);
+
+--
+-- Filtros para la tabla `perfil`
+--
+ALTER TABLE `perfil`
+  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `usuario` (`id`);
 
 --
 -- Filtros para la tabla `post`

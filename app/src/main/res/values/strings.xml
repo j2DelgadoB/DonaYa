@@ -40,7 +40,6 @@
         <item>@drawable/perfil_menu</item>
         <item>@drawable/salir_app_menu</item>
     </array>
-
     <string name="desc_list_item_icon">Item Icon</string>
 
     <!-- TODO: Remove or change this placeholder text -->

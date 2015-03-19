@@ -32,6 +32,7 @@ import com.example.jose.myapplication.fragments.Cita1Fragment;
 
 import com.example.jose.myapplication.fragments.CitaFragment;
 import com.example.jose.myapplication.fragments.CrearMensaje;
+import com.example.jose.myapplication.fragments.ListaContactoFragment;
 import com.example.jose.myapplication.models.MenuDrawerItem;
 
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -122,6 +123,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             //fragment lista de contactos
+            displayView(5);
         }
 
     }
@@ -155,13 +157,22 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
     }
 
     private void displayView(int position) {
+        viewPager = (ViewPager) findViewById(R.id.mi_pager);
         // update the main content by replacing fragments
         Fragment fragment = null;
         switch (position) {
             case 0:
+
+               // viewPager.removeAllViews();//no found
+                viewPager.setVisibility(View.INVISIBLE);
+              /*  if (mAdapter!=null){
+                    mAdapter=null;
+                    mAdapter.notifyDataSetChanged();
+                }*/
                 fragment = new BandejaFragment();
                 break;
             case 1:
+                viewPager.setVisibility(View.INVISIBLE);
                 fragment = new CrearMensaje();
                 break;
             case 2:
@@ -169,11 +180,16 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
                 //citas
                 break;
             case 3:
+                viewPager.setVisibility(View.INVISIBLE);
                 Log.d("3", "falta implementar");
                 break;
             case 4:
+                viewPager.setVisibility(View.INVISIBLE);
                 System.exit(0);
                 break;
+            case 5:
+                viewPager.setVisibility(View.INVISIBLE);
+                fragment = new ListaContactoFragment();
             default:
                 break;
         }
@@ -183,18 +199,18 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
             fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
 
             // update selected item and title, then close the drawer
-
-           mDrawerList.setItemChecked(position, true);
-           mDrawerList.setSelection(position);
-           //setTitle(navMenuTitles[position]);
-          titleFragment.setText(navMenuTitles[position]);
-          titleFragment.setText("Cita para donar");
-          mDrawerLayout.closeDrawer(mDrawerList);
+        if(position<=4) {
+            mDrawerList.setItemChecked(position, true);
+            mDrawerList.setSelection(position);
+            //setTitle(navMenuTitles[position]);
+            titleFragment.setText(navMenuTitles[position]);
+            titleFragment.setText("Cita para donar");
+            mDrawerLayout.closeDrawer(mDrawerList);
             //mDrawerLayout.closeDrawers();
-
+        }
           if(position==2){
 
-              viewPager = (ViewPager) findViewById(R.id.mi_pager);
+
               actionBar =  getSupportActionBar();
               mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 
@@ -228,6 +244,12 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
                   public void onPageScrollStateChanged(int arg0) {
                   }
               });
+          }else{
+              actionBar =  getSupportActionBar();
+              actionBar.removeAllTabs();
+              actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+
+
           }
         } else {
             // error in creating fragment

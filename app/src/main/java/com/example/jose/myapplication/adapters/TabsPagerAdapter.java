@@ -30,6 +30,8 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 // Movies fragment activity
                 return new Cita3Fragment();
+            case 3:
+                return null;
         }
 
         return null;
@@ -40,5 +42,6 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         // get item count - equal to number of tabs
         return 3;
     }
+
 
 }

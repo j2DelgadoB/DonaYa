@@ -116,21 +116,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
                 // Perform action on key press
                 Toast.makeText(actividad, rpta_temp.getText().toString() + " " + String.valueOf(rpta_temp.getId()), Toast.LENGTH_LONG).show();
+                if (rpta_temp.getText().toString().equals("") || rpta_temp.getText().toString().equals(null)){
+                    Toast.makeText(actividad,"Escriba su respuesta",Toast.LENGTH_SHORT);
+                }else {
+                    adaptador.add(rpta_temp.getText().toString());
+                    //Log.d("elemt agregado",rptaxpost.get(rptaxpost.size()-1).toString());
+                    // Log.d("adaptador add rpta:",adaptador.getItem(0).toString());
+                    adaptador.notifyDataSetChanged();
+                    Log.d("Log:", "todas las respuestas + añadidas");
+                    for (int i = 0; i < adaptador.getCount(); i++) {
+                        Log.d("rptas:", adaptador.getItem(i));
+                    }
 
-                adaptador.add(rpta_temp.getText().toString());
-                //Log.d("elemt agregado",rptaxpost.get(rptaxpost.size()-1).toString());
-                // Log.d("adaptador add rpta:",adaptador.getItem(0).toString());
-                adaptador.notifyDataSetChanged();
-                Log.d("Log:","todas las respuestas + añadidas");
-                for (int i=0;i<adaptador.getCount();i++){
-                    Log.d("rptas:",adaptador.getItem(i));
+
+                    String msj = adaptador.getItem(adaptador.getCount() - 1);
+                    AgregarRespuesta ar = new AgregarRespuesta(idPost, msj);
+                    ar.execute();
                 }
-
-
-                String msj= adaptador.getItem(adaptador.getCount()-1);
-                AgregarRespuesta ar= new AgregarRespuesta(idPost,msj);
-                ar.execute();
-
             }
 
 
