@@ -33,6 +33,7 @@ import com.example.jose.myapplication.fragments.Cita1Fragment;
 import com.example.jose.myapplication.fragments.CitaFragment;
 import com.example.jose.myapplication.fragments.CrearMensaje;
 import com.example.jose.myapplication.fragments.ListaContactoFragment;
+import com.example.jose.myapplication.fragments.PerfilFragment;
 import com.example.jose.myapplication.models.MenuDrawerItem;
 
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -123,6 +124,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             //fragment lista de contactos
+            Log.d("entro","null");
             displayView(5);
         }
 
@@ -181,7 +183,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
                 break;
             case 3:
                 viewPager.setVisibility(View.INVISIBLE);
-                Log.d("3", "falta implementar");
+                fragment = new PerfilFragment();
                 break;
             case 4:
                 viewPager.setVisibility(View.INVISIBLE);

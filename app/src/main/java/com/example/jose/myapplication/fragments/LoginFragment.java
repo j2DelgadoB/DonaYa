@@ -16,6 +16,7 @@ import android.widget.EditText;
 
 import com.example.jose.myapplication.PrincipalActivity;
 import com.example.jose.myapplication.R;
+import com.example.jose.myapplication.RegisterActivity;
 import com.example.jose.myapplication.utils.JSONParser;
 
 import org.apache.http.NameValuePair;
@@ -73,6 +74,14 @@ public class LoginFragment extends Fragment{
                 //startActivity(i);
                 Login login=new Login();
                 login.execute();
+            }
+        });
+        Button btnRegistro = (Button) rootView.findViewById(R.id.btnRegistrarse);
+        btnRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getActivity(), RegisterActivity.class);
+                startActivity(i);
             }
         });
         return rootView;

@@ -46,7 +46,9 @@ public class ListaContactoFragment extends Fragment {
         @Override
         protected String doInBackground(Void... params) {
             List<NameValuePair> par = new ArrayList<NameValuePair>();
-            par.add(new BasicNameValuePair("idUser",getActivity().getIntent().getStringExtra("MyID")));
+            String id=getActivity().getIntent().getStringExtra("MyID");//cuando pasa de login -->pintar lista bien pero cuando pasa de editar perfil --> pintar lista no anda
+            Log.d("mi id:",id);
+            par.add(new BasicNameValuePair("idUser",id));
             try {
                 json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
                 Log.d("mi json 2", json.toString());
