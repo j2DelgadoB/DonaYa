@@ -46,8 +46,10 @@ import java.util.ArrayList;
 
 public class PrincipalActivity extends ActionBarActivity implements ActionBar.TabListener {
 
+
     private ViewPager viewPager;
     private TabsPagerAdapter mAdapter;
+
     private ActionBar actionBar;
 
     private String[] tabs = { "Paso 1", "Paso 2", "Finalizar" };
@@ -67,6 +69,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         relativeLayout = (RelativeLayout) findViewById(R.id.main_home);
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
@@ -159,6 +162,8 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
     }
 
     private void displayView(int position) {
+
+
         viewPager = (ViewPager) findViewById(R.id.mi_pager);
         // update the main content by replacing fragments
         Fragment fragment = null;
@@ -172,18 +177,23 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
                     mAdapter.notifyDataSetChanged();
                 }*/
                 fragment = new BandejaFragment();
+                fragment.setArguments(getIntent().getExtras());
                 break;
             case 1:
                 viewPager.setVisibility(View.INVISIBLE);
                 fragment = new CrearMensaje();
+                fragment.setArguments(getIntent().getExtras());
                 break;
             case 2:
+                viewPager.setVisibility(View.VISIBLE);
                 fragment = new CitaFragment();
+                fragment.setArguments(getIntent().getExtras());
                 //citas
                 break;
             case 3:
                 viewPager.setVisibility(View.INVISIBLE);
                 fragment = new PerfilFragment();
+                fragment.setArguments(getIntent().getExtras());
                 break;
             case 4:
                 viewPager.setVisibility(View.INVISIBLE);
@@ -192,6 +202,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
             case 5:
                 viewPager.setVisibility(View.INVISIBLE);
                 fragment = new ListaContactoFragment();
+                fragment.setArguments(getIntent().getExtras());//not working
             default:
                 break;
         }

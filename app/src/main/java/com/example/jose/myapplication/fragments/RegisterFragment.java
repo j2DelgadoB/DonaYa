@@ -74,7 +74,7 @@ public class RegisterFragment extends Fragment {
         }
         protected  void onPostExecute(String file_url) {
             // Toast.makeText(getActivity(),"mi json " ,Toast.LENGTH_LONG).show();
-            Intent i = new Intent(getActivity(), PrincipalActivity.class);
+            Intent i = new Intent(getActivity(), LoginActivity.class);
             startActivity(i);
         }
     }

@@ -114,6 +114,7 @@ public class LoginFragment extends Fragment{
                     if(user.getText().toString().equals(username) && pass.getText().toString().equals(password)){
                         SharedPreferences settings= getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = settings.edit();
+                        editor.putString("id",ID);
                         editor.putString("username", user.getText().toString());
                         editor.putString("password",pass.getText().toString());
                         editor.commit();

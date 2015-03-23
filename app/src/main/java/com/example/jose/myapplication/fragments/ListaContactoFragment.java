@@ -1,6 +1,8 @@
 package com.example.jose.myapplication.fragments;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -47,6 +49,18 @@ public class ListaContactoFragment extends Fragment {
         protected String doInBackground(Void... params) {
             List<NameValuePair> par = new ArrayList<NameValuePair>();
             String id=getActivity().getIntent().getStringExtra("MyID");//cuando pasa de login -->pintar lista bien pero cuando pasa de editar perfil --> pintar lista no anda
+
+           //String id=getActivity().getIntent().getExtras().getString("MyID");
+
+           /*
+            String id;
+            Bundle bundle = getArguments();
+            if (bundle != null) {
+                id = bundle.getString("MyId");
+            }else{
+                id="vacio";
+            }*/
+
             Log.d("mi id:",id);
             par.add(new BasicNameValuePair("idUser",id));
             try {

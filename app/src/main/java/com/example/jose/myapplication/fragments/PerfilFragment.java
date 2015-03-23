@@ -154,7 +154,9 @@ public class PerfilFragment extends Fragment{
         }
         protected void onPostExecute(String file_url) {
             Intent i = new Intent(getActivity(), PrincipalActivity.class);
-
+            i.putExtra("MyID",getActivity().getIntent().getStringExtra("MyID"));
+            i.putExtra("MyUsername",getActivity().getIntent().getStringExtra("MyUsername"));
+            i.putExtra("MyEmail",getActivity().getIntent().getStringExtra("MyEmail"));
             startActivity(i);
         }
     }

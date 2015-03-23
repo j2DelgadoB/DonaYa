@@ -106,6 +106,9 @@ public class CrearMensaje extends Fragment {
                     Log.d("","se guardo en la base de datos correctamente");
                 }//verificar su conexion a internet*/
                 Intent i= new Intent(getActivity(), PrincipalActivity.class);
+                i.putExtra("MyID",getActivity().getIntent().getStringExtra("MyID"));
+                i.putExtra("MyUsername",getActivity().getIntent().getStringExtra("MyUsername"));
+                i.putExtra("MyEmail",getActivity().getIntent().getStringExtra("MyEmail"));
                 startActivity(i);
             }catch (Exception e){
               e.printStackTrace();
