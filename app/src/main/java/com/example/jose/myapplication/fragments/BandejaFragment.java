@@ -110,12 +110,20 @@ public class BandejaFragment extends Fragment {
 
                         JSONObject c = msjPost.getJSONObject(i);
                         String idPost= c.getString("idPost");
+                        String idUser = c.getString("idUser");
+                        String username = c.getString("username");
                         String msjSolicitud= c.getString("msjSolicitud");
                         post.setId(idPost);
+                        post.setIdUser(idUser);
+                        post.setUsername(username);
                         post.setSolicita(msjSolicitud);
                         String msjRespuesta = c.getString("msjRespuesta");
+                        String idUserRpta=c.getString("idUserRpta");
+                        String usernameRpta = c.getString("usernameRpta");
 
                         respuesta.setResponde(msjRespuesta);
+                        respuesta.setIdUser(idUserRpta);
+                        respuesta.setUsername(usernameRpta);
                         arrayRpta.add(respuesta);
                         Log.d("id:",idPost);
                         for (next=i+1;next<msjPost.length();next++) {
@@ -123,9 +131,13 @@ public class BandejaFragment extends Fragment {
                             Log.d("id post next:",d.getString("idPost"));
                             if (idPost.equals(d.getString("idPost"))) {
                                 String msjRespuestanext = d.getString("msjRespuesta");
+                                String idUserRptanext=d.getString("idUserRpta");
+                                String usernameRptanext = d.getString("usernameRpta");
                                 //agregar las respuestas al arrayRpta
                                 Respuesta respuestanext = new Respuesta();
                                 respuestanext.setResponde(msjRespuestanext);
+                                respuestanext.setIdUser(idUserRptanext);
+                                respuestanext.setUsername(usernameRptanext);
 
                                 arrayRpta.add(respuestanext);
                                 Log.d("Respuestaconsecutiva:","si");
@@ -174,7 +186,7 @@ public class BandejaFragment extends Fragment {
             RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view);
             recyclerView.setHasFixedSize(true);
 
-            recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity()));
+            recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity(), getActivity().getIntent().getStringExtra("MyID")));
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             /*
