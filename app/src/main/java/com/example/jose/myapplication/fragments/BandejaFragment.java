@@ -92,7 +92,8 @@ public class BandejaFragment extends Fragment {
             List<NameValuePair> par = new ArrayList<NameValuePair>();
             par.add(new BasicNameValuePair("mostrar_todo","1"));
             try {
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_post.php","POST",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_post.php","POST",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_post.php","POST",par);
                 Log.d("Mi json 1:", json.toString());
                 int success = json.getInt("success");
                 if (success==1){
@@ -181,12 +182,13 @@ public class BandejaFragment extends Fragment {
                 }
             }
 
-            /* */
-
+            /* Log array list contact*/
+            //ArrayList<String> contactlist= (ArrayList<String>) getArguments().getStringArrayList("IdAmigos").clone();
+           // Log.d("Array en Bandeja",contactlist.get(0));
             RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view);
             recyclerView.setHasFixedSize(true);
 
-            recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity(), getActivity().getIntent().getStringExtra("MyID")));
+            recyclerView.setAdapter(new PostAdapter(postList, R.layout.card_posts, getActivity(),getActivity().getIntent().getStringExtra("MyID")));
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             /*

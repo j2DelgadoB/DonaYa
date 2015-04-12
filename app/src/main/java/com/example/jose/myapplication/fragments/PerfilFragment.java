@@ -76,7 +76,8 @@ public class PerfilFragment extends Fragment{
             List<NameValuePair> par = new ArrayList<NameValuePair>();
             par.add(new BasicNameValuePair("idUser",getActivity().getIntent().getStringExtra("MyID")));
             try {
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/get_perfil.php","POST",par);
+               // json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/get_perfil.php","POST",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/get_perfil.php","POST",par);
                 Log.d("mi json cargar perfil", json.toString());
                 int success=json.getInt("success");
                 if (success==1){
@@ -140,7 +141,8 @@ public class PerfilFragment extends Fragment{
             par.add(new BasicNameValuePair("telefono",telefono.getText().toString()));
             try {
                 jParser = new JSONParser();
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/update_perfil.php","GET",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/update_perfil.php","GET",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/update_perfil.php","GET",par);
                 Log.d("mi json update perfil", json.toString());
                 int success=json.getInt("success");
                 if (success==1){

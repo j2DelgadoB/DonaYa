@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by jose on 21/03/2015.
  */
-public class RegisterFragment extends Fragment {
+public class RegisterFragment extends android.support.v4.app.Fragment {
     JSONParser jParser = new JSONParser();
     public RegisterFragment() {
     }
@@ -60,8 +60,8 @@ public class RegisterFragment extends Fragment {
             par.add(new BasicNameValuePair("password",pass.getText().toString()));
             par.add(new BasicNameValuePair("email",email.getText().toString()));
             try {
-                json = jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php", "GET", par);
-                //json=jParser.makeHttpRequest("http://isulamotors.com.pe/ventas/login.php","POST",par);
+                //json = jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php", "GET", par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/registro_perfil.php","GET",par);
 
                 Log.d("mi json ", json.toString());
                 int success = json.getInt("success");

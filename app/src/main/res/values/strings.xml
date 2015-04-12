@@ -10,6 +10,12 @@
     <string name="mensaje_cita1">Podria reservar una cita minimo con 3 dias de anticipacion.Para cambiar una cita, por favor llamar al 012341124.Si no le contestamos em un plazo de 48 horas porfavor llamar.Nuestro horario de atención es de L-V 9AM-6PM.
     </string>
 
+    <string name="facebook_app_id">312054032307399</string>
+    <string name="twitter_consumer_key">8Gy3OKQMbKJ15BH0BferBNHEj</string>
+    <string name="twitter_consumer_secret">dSUHvkbS8xCwoS6lozPAFgDtIuKhTGkRW1OYXJqxBCMgKMyDX4</string>
+    <string name="linkedin_consumer_key">7523ssry5qk7rl</string>
+    <string name="linkedin_consumer_secret">sFyJf0ZW1lp31aGU</string>
+
 
     <string-array name="grupo_sanguineo">
         <item>A+</item>

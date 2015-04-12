@@ -6,4 +6,12 @@
     <color name="list_divider">#272727</color>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
+
+    <color name="grey_light">#FFCCCCCC</color>
+    <color name="dark">#4b4b4b</color>
+
+    <color name="facebook">#3b5998</color>
+    <color name="twitter">#55ACEE</color>
+    <color name="linkedin">#287bbc</color>
+    <color name="googleplus">#D34836</color>
 </resources>

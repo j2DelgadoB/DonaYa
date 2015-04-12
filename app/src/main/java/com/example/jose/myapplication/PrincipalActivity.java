@@ -22,13 +22,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.jose.myapplication.adapters.MenuDrawerListAdapter;
 import com.example.jose.myapplication.adapters.TabsPagerAdapter;
 import com.example.jose.myapplication.fragments.BandejaFragment;
-import com.example.jose.myapplication.fragments.Cita1Fragment;
 
 import com.example.jose.myapplication.fragments.CitaFragment;
 import com.example.jose.myapplication.fragments.CrearMensaje;
@@ -39,13 +37,13 @@ import com.example.jose.myapplication.models.MenuDrawerItem;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
 public class PrincipalActivity extends ActionBarActivity implements ActionBar.TabListener {
 
+    private ArrayList<String> list_contacts=new ArrayList<String>();
 
     private ViewPager viewPager;
     private TabsPagerAdapter mAdapter;
@@ -202,7 +200,8 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
             case 5:
                 viewPager.setVisibility(View.INVISIBLE);
                 fragment = new ListaContactoFragment();
-                fragment.setArguments(getIntent().getExtras());//not working
+                fragment.setArguments(getIntent().getExtras());
+
             default:
                 break;
         }
@@ -261,9 +260,8 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
               actionBar =  getSupportActionBar();
               actionBar.removeAllTabs();
               actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-
-
           }
+
         } else {
             // error in creating fragment
             Log.e("MainActivity", "Error in creating fragment");

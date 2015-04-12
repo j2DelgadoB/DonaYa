@@ -20,8 +20,8 @@ public class RegisterActivity extends ActionBarActivity {
             //getSupportFragmentManager().beginTransaction().add(R.id.container,new LoginFragment()).commit();
             // user = (EditText)findViewById(R.id.editText);
             //   pass = (EditText)findViewById(R.id.editText2);
-            FragmentManager manager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = manager.beginTransaction();
+            android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = manager.beginTransaction();
             RegisterFragment fragment = new RegisterFragment();
             fragmentTransaction.add(R.id.containerRegister, fragment).hide(fragment);
             fragmentTransaction.show(fragment).commit();

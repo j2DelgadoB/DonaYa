@@ -99,7 +99,8 @@ public class CrearMensaje extends Fragment {
             Log.d("Mi id de usuario",idUser);
             Log.i("captura dato telefono",tel.getText().toString());
             try {
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/crear_post.php","GET",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/crear_post.php","GET",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/crear_post.php","GET",par);
                 Log.d("Mi json 1:", json.toString());
                 int success = json.getInt("success");
                 if (success==1){

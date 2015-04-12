@@ -30,10 +30,13 @@ import java.util.List;
 public class ListaContactoFragment extends Fragment {
     JSONParser jParser = new JSONParser();
     JSONArray ContactListJson = null;
+
     ArrayList<String> contactListName = new ArrayList<String>();//para el listview
    // ArrayList<HashMap<String, String>> contactList= new ArrayList<HashMap<String, String>>();
     public ListaContactoFragment() {
     }
+
+
 
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,7 +67,8 @@ public class ListaContactoFragment extends Fragment {
             Log.d("mi id:",id);
             par.add(new BasicNameValuePair("idUser",id));
             try {
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_contacts.php","POST",par);
                 Log.d("mi json 2", json.toString());
                 int success=json.getInt("success");
                 if (success==1){
@@ -75,6 +79,7 @@ public class ListaContactoFragment extends Fragment {
                         String nombreAmigo= c.getString("nomAmigo");
                         String apellidoAmigo = c.getString("apeAmigo");
                         contactListName.add(nombreAmigo + " " + apellidoAmigo);
+
                     }
                 }
 
@@ -87,6 +92,7 @@ public class ListaContactoFragment extends Fragment {
             ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getActivity(),R.layout.contact_list_item,R.id.name_contact, contactListName);
             ListView lista_contactos=(ListView)getActivity().findViewById(R.id.listaContacto);
             lista_contactos.setAdapter(adaptador);
+
         }
     }
 }
