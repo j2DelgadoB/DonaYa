@@ -55,6 +55,7 @@
         </FrameLayout>
         <!-- Listview to display slider menu -->
     </RelativeLayout>
+
         <ListView
             android:id="@+id/list_slidermenu"
             android:layout_width="240dp"

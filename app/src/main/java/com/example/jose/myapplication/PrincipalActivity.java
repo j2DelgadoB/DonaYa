@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.jose.myapplication.adapters.MenuDrawerListAdapter;
@@ -33,6 +34,7 @@ import com.example.jose.myapplication.fragments.CrearMensaje;
 import com.example.jose.myapplication.fragments.ListaContactoFragment;
 import com.example.jose.myapplication.fragments.PerfilFragment;
 import com.example.jose.myapplication.models.MenuDrawerItem;
+import com.squareup.picasso.Picasso;
 
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.widget.RelativeLayout;
@@ -67,6 +69,12 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView photo= (ImageView) this.findViewById(R.id.imageView2);
+/*
+        Picasso.with(this)
+                .load(this.getIntent().getStringExtra("Photo"))
+                .into(photo);*/
 
         relativeLayout = (RelativeLayout) findViewById(R.id.main_home);
         // load slide menu items

@@ -2,8 +2,11 @@ package com.example.jose.myapplication.fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,13 +14,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jose.myapplication.LoginActivity;
+import com.example.jose.myapplication.PrincipalActivity;
 import com.example.jose.myapplication.R;
+import com.example.jose.myapplication.models.SocialData;
+import com.example.jose.myapplication.utils.JSONParser;
 import com.github.gorbin.asne.core.SocialNetwork;
 import com.github.gorbin.asne.core.listener.OnPostingCompleteListener;
 import com.github.gorbin.asne.core.listener.OnRequestSocialPersonCompleteListener;
@@ -27,6 +35,13 @@ import com.github.gorbin.asne.googleplus.GooglePlusSocialNetwork;
 import com.github.gorbin.asne.linkedin.LinkedInSocialNetwork;
 import com.github.gorbin.asne.twitter.TwitterSocialNetwork;
 import com.squareup.picasso.Picasso;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileFragment extends Fragment implements OnRequestSocialPersonCompleteListener {
     private String message = "Need simple social networks integration? Check this lbrary:";
@@ -39,9 +54,12 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
     private TextView name;
     private TextView id;
     private TextView info;
-    private Button friends;
-    private Button share;
+    private Button registrar;
+    private Button continuar;
     private RelativeLayout frame;
+    private String socialPersonString;
+    private SocialData socialData;
+
 
     public static ProfileFragment newInstannce(int id) {
         ProfileFragment fragment = new ProfileFragment();
@@ -68,10 +86,10 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         name = (TextView) rootView.findViewById(R.id.name);
         id = (TextView) rootView.findViewById(R.id.id);
         info = (TextView) rootView.findViewById(R.id.info);
-        friends = (Button) rootView.findViewById(R.id.friends);
-        friends.setOnClickListener(friendsClick);
-        share = (Button) rootView.findViewById(R.id.share);
-        share.setOnClickListener(shareClick);
+        registrar = (Button) rootView.findViewById(R.id.friends);
+        registrar.setOnClickListener(registrarClick);
+        continuar = (Button) rootView.findViewById(R.id.share);
+        continuar.setOnClickListener(continuarClick);
         colorProfile(networkId);
 
         socialNetwork = LoginFragment.mSocialNetworkManager.getSocialNetwork(networkId);
@@ -105,12 +123,21 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         LoginActivity.hideProgress();
         name.setText(socialPerson.name);
         id.setText(socialPerson.id);
-        String socialPersonString = socialPerson.toString();
+        socialPersonString = socialPerson.toString();
         String infoString = socialPersonString.substring(socialPersonString.indexOf("{")+1, socialPersonString.lastIndexOf("}"));
         info.setText(infoString.replace(", ", "\n"));
         Picasso.with(getActivity())
                 .load(socialPerson.avatarURL)
                 .into(photo);
+
+        socialData = new SocialData();
+        socialData.setId(socialPerson.id);
+        socialData.setName(socialPerson.name);
+        socialData.setAvatarURL(socialPerson.avatarURL);
+        socialData.setProfileURL(socialPerson.profileURL);
+        socialData.setEmail(socialPerson.email);
+
+
     }
 
     @Override
@@ -119,7 +146,7 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         Toast.makeText(getActivity(), "ERROR: " + errorMessage, Toast.LENGTH_LONG).show();
     }
 
-    private View.OnClickListener friendsClick = new View.OnClickListener() {
+    private View.OnClickListener registrarClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
            /* FriendsFragment friends = FriendsFragment.newInstannce(networkId);
@@ -130,9 +157,12 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         }
     };
 
-    private View.OnClickListener shareClick = new View.OnClickListener() {
+    private View.OnClickListener continuarClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            crearUserSocial userSocial = new crearUserSocial(socialData);
+            userSocial.execute();
+
           /*  AlertDialog.Builder ad = alertDialogInit("Would you like to post Link:", link);
             ad.setPositiveButton("Post link", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
@@ -196,8 +226,8 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         }
         frame.setBackgroundColor(color);
         name.setTextColor(color);
-        friends.setBackgroundColor(color);
-        share.setBackgroundColor(color);
+        registrar.setBackgroundColor(color);
+        continuar.setBackgroundColor(color);
         photo.setBackgroundColor(color);
         photo.setImageResource(image);
     }
@@ -208,5 +238,84 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         ad.setMessage(message);
         ad.setCancelable(true);
         return ad;
+    }
+    private class crearUserSocial extends AsyncTask<Void,Void,String> {
+        JSONObject json=null;
+        JSONParser jParser = new JSONParser();
+        SocialData socialData= new SocialData();
+        public crearUserSocial(SocialData socialData) {
+            this.socialData= socialData;
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            List<NameValuePair> par = new ArrayList<NameValuePair>();
+            Log.i("captura", socialData.toString());
+            String username= networkId+cuentaSocial(networkId).substring(0,1).concat(socialData.getId());
+            String password= new StringBuilder(username).reverse().toString();
+            String urlCuentaSocial;
+            if (networkId==1) { //TWitter{
+                urlCuentaSocial="https://twitter.com/intent/user?user_id=".concat(socialData.getId());
+            } else {
+                urlCuentaSocial=socialData.getProfileURL();
+            }
+
+            Log.d("username",username);
+            Log.d("password",password);
+            par.add(new BasicNameValuePair("username",username));
+            par.add(new BasicNameValuePair("password",password));
+            par.add(new BasicNameValuePair("email",socialData.getEmail()));
+
+            par.add(new BasicNameValuePair("tipoCuenta",cuentaSocial(networkId)));
+
+            par.add(new BasicNameValuePair("name",socialData.getName()));
+            par.add(new BasicNameValuePair("urlCuentaSocial",urlCuentaSocial));
+            par.add(new BasicNameValuePair("foto",socialData.getAvatarURL()));
+            //urlCuentaSocial
+
+            try {
+                  json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php","GET",par);
+                  //json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/registro_perfil.php","GET",par);
+                Log.d("Mi json:", json.toString());
+                int success = json.getInt("success");
+                if (success==1){
+                    Log.d("","se guardo en la base de datos correctamente");
+
+                    Intent i= new Intent(getActivity(), PrincipalActivity.class);
+                    Intent intent = new Intent(getActivity(), PrincipalActivity.class);
+                    intent.putExtra("MyID",json.getString("id"));
+                    intent.putExtra("MyUsername",username);
+                    intent.putExtra("MyEmail",socialData.getEmail());
+                    intent.putExtra("Photo",socialData.getAvatarURL());
+
+                    startActivity(intent);
+                    startActivity(i);
+                }//verificar su conexion a internet
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+        protected void onPostExecute(String file){
+
+        }
+    }
+    /**
+     * SocialNetwork Ids in ASNE:
+     * 1 - Twitter
+     * 2 - LinkedIn
+     * 3 - Google Plus
+     * 4 - Facebook
+     */
+    private String cuentaSocial(int networkId){
+        if (networkId==1){
+            return "twitter";
+        } else if (networkId==3){
+            return "google";
+        }  else if (networkId==4){
+            return "facebook";
+        }
+        return "otro";
     }
 }

@@ -184,8 +184,8 @@ public class LoginFragment extends android.support.v4.app.Fragment implements So
             par.add(new BasicNameValuePair("ausuario",user.getText().toString()));
             par.add(new BasicNameValuePair("acontrasena",pass.getText().toString()));
             try{
-               // json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/login.php","POST",par);
-                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/login.php","POST",par);
+                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/login.php","POST",par);
+              //  json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/login.php","POST",par);
 
                 Log.d("mi json ",json.toString());
                 int success=json.getInt(TAG_SUCCESS);

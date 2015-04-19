@@ -91,9 +91,10 @@
             android:background="@color/grey_light">
 
             <Button
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Friends"
+                android:text="Crear/Modificar"
                 android:id="@+id/friends"
                 android:padding="8dp"
                 android:background="@color/dark"
@@ -103,7 +104,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Share"
+                android:text="Continuar"
                 android:id="@+id/share"
                 android:padding="8dp"
                 android:background="@color/dark"
