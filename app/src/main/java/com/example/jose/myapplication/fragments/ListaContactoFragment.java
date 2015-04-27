@@ -67,8 +67,8 @@ public class ListaContactoFragment extends Fragment {
             //Log.d("mi id:",id);
             par.add(new BasicNameValuePair("idUser",id));
             try {
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
-                //json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_contacts.php","POST",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_contacts.php","POST",par);
                 Log.d("mi json 2", json.toString());
                 int success=json.getInt("success");
                 if (success==1){

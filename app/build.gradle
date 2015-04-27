@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "21.1.2"
     defaultConfig {
         applicationId "com.example.jose.myapplication"
         minSdkVersion 10
@@ -22,13 +22,15 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-v4:21.0.2'
-    compile 'com.android.support:recyclerview-v7:21.0.2'
-    compile 'com.android.support:cardview-v7:21.0.2'
-    compile 'com.android.support:appcompat-v7:21.0.2'
+    compile 'com.android.support:support-v4:+'
+    compile 'com.android.support:recyclerview-v7:+'
+    compile 'com.android.support:cardview-v7:+'
+    compile 'com.android.support:appcompat-v7:+'
     compile 'com.github.asne:asne-facebook:0.3.3'
     compile 'com.github.asne:asne-linkedin:0.3.3'
     compile 'com.github.asne:asne-twitter:0.3.3'
     compile 'com.github.asne:asne-googleplus:0.3.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'eu.the4thfloor.volley:com.android.volley:2015.02.02'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
 }

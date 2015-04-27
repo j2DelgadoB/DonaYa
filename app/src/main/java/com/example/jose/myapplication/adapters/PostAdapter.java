@@ -335,8 +335,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             Log.d("pasando por parametros:",idPost+" "+newRpta);
             try {
 
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/add_rpta.php","POST",par);
-                //json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/add_rpta.php","POST",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/add_rpta.php","POST",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/add_rpta.php","POST",par);
 
                 int success = json.getInt("success");
                 if (success==1){
@@ -362,8 +362,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             Log.d("mi id:",id);
             par.add(new BasicNameValuePair("idUser",id));
             try {
-                json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
-                //json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_contacts.php","POST",par);
+                //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_contacts.php","POST",par);
+                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_contacts.php","POST",par);
                 Log.d("mi json cargar cont", json.toString());
                 int success=json.getInt("success");
                 if (success==1){

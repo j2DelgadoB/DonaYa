@@ -1,11 +1,16 @@
 package com.example.jose.myapplication.fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,6 +29,9 @@ import android.widget.Toast;
 import com.example.jose.myapplication.LoginActivity;
 import com.example.jose.myapplication.PrincipalActivity;
 import com.example.jose.myapplication.R;
+import com.example.jose.myapplication.adapters.RecyclerHolderHeaderAdapter;
+import com.example.jose.myapplication.models.HeaderItem;
+import com.example.jose.myapplication.models.Perfil;
 import com.example.jose.myapplication.models.SocialData;
 import com.example.jose.myapplication.utils.JSONParser;
 import com.github.gorbin.asne.core.SocialNetwork;
@@ -38,6 +46,7 @@ import com.squareup.picasso.Picasso;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -274,14 +283,13 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
             //urlCuentaSocial
 
             try {
-                  json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php","GET",par);
-                  //json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/registro_perfil.php","GET",par);
+                //  json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php","GET",par);
+                  json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/registro_perfil.php","GET",par);
                 Log.d("Mi json:", json.toString());
                 int success = json.getInt("success");
                 if (success==1){
                     Log.d("","se guardo en la base de datos correctamente");
 
-                    Intent i= new Intent(getActivity(), PrincipalActivity.class);
                     Intent intent = new Intent(getActivity(), PrincipalActivity.class);
                     intent.putExtra("MyID",json.getString("id"));
                     intent.putExtra("MyUsername",username);
@@ -289,7 +297,6 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
                     intent.putExtra("Photo",socialData.getAvatarURL());
 
                     startActivity(intent);
-                    startActivity(i);
                 }//verificar su conexion a internet
 
             }catch (Exception e){
@@ -298,6 +305,7 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
             return null;
         }
         protected void onPostExecute(String file){
+
 
         }
     }
@@ -318,4 +326,6 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
         }
         return "otro";
     }
+
+
 }

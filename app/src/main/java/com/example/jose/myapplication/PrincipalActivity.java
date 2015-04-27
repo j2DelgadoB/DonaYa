@@ -2,6 +2,9 @@ package com.example.jose.myapplication;
 
 
 
+import android.app.Activity;
+import android.media.Image;
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
@@ -17,6 +20,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 
 
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,21 +32,32 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.jose.myapplication.adapters.MenuDrawerListAdapter;
+import com.example.jose.myapplication.adapters.RecyclerHolderHeaderAdapter;
 import com.example.jose.myapplication.adapters.TabsPagerAdapter;
 import com.example.jose.myapplication.fragments.BandejaFragment;
 
 import com.example.jose.myapplication.fragments.CitaFragment;
 import com.example.jose.myapplication.fragments.CrearMensaje;
+import com.example.jose.myapplication.fragments.HeaderFragment;
 import com.example.jose.myapplication.fragments.ListaContactoFragment;
 import com.example.jose.myapplication.fragments.PerfilFragment;
+import com.example.jose.myapplication.models.HeaderItem;
 import com.example.jose.myapplication.models.MenuDrawerItem;
+import com.example.jose.myapplication.models.Perfil;
+import com.example.jose.myapplication.utils.JSONParser;
 import com.squareup.picasso.Picasso;
 
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class PrincipalActivity extends ActionBarActivity implements ActionBar.TabListener {
@@ -65,12 +82,18 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private RelativeLayout relativeLayout;
+
+
+
+    private Context context;
+    private Activity actividad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //context=this;
+        actividad=this;
 
-        ImageView photo= (ImageView) this.findViewById(R.id.imageView2);
 /*
         Picasso.with(this)
                 .load(this.getIntent().getStringExtra("Photo"))
@@ -131,10 +154,21 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         titleFragment=(TextView)findViewById(R.id.titulo_fragmento);
         titleFragment.setText("Lista de Contactos");
         if (savedInstanceState == null) {
+
+
             // on first time display view for first nav item
+
             //fragment lista de contactos
+
+            //CargarPerfil cp=new CargarPerfil(actividad);
+            //cp.execute();
             Log.d("entro","null");
-            displayView(5);
+            //Picasso.with(actividad).load(urlFoto).into(photo);
+            //displayView(5);
+            CargarImagen cargarImagen= new CargarImagen();
+            cargarImagen.execute();
+
+
         }
 
     }
@@ -167,8 +201,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         }
     }
 
-    private void displayView(int position) {
-
+    public void displayView(int position) {
 
         viewPager = (ViewPager) findViewById(R.id.mi_pager);
         // update the main content by replacing fragments
@@ -182,6 +215,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
                     mAdapter=null;
                     mAdapter.notifyDataSetChanged();
                 }*/
+                Log.d("Bandeja:","entro");
                 fragment = new BandejaFragment();
                 fragment.setArguments(getIntent().getExtras());
                 break;
@@ -217,6 +251,8 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
+
+
 
             // update selected item and title, then close the drawer
         if(position<=4) {
@@ -272,7 +308,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
 
         } else {
             // error in creating fragment
-            Log.e("MainActivity", "Error in creating fragment");
+            Log.d("MainActivity", "Error in creating fragment");
         }
 
     }
@@ -343,5 +379,37 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         super.onBackPressed();
         return;
     }
+    //
+    private class CargarImagen extends AsyncTask<Void,Void,String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            try {
+                //Load header
+                HeaderFragment headerFragment = new HeaderFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .addToBackStack("header")
+                        .replace(R.id.frame_images,headerFragment)
+                        .commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        /*
+
+         */
+        protected void onPostExecute(String file_url) {
+
+           displayView(5);
+
+
+            //  Picasso.with(context).load(urlFoto).error(R.drawable.user).placeholder(R.drawable.user).into(photo);
+            //  Picasso.with(context).load(urlFondo).error(R.drawable.header_bg).placeholder(R.drawable.header_bg).into(background);
+        }
+    }
+
 
 }

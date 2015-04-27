@@ -85,21 +85,24 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="asne-linkedin-0.3.3" level="project" />
     <orderEntry type="library" exported="" name="asne-googleplus-0.3.3" level="project" />
     <orderEntry type="library" exported="" name="facebook-android-sdk-3.19.1" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-21.0.2" level="project" />
     <orderEntry type="library" exported="" name="asne-twitter-0.3.3" level="project" />
-    <orderEntry type="library" exported="" name="cardview-v7-21.0.2" level="project" />
+    <orderEntry type="library" exported="" name="universal-image-loader-1.9.3" level="project" />
+    <orderEntry type="library" exported="" name="recyclerview-v7-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-4.3.23" level="project" />
-    <orderEntry type="library" exported="" name="recyclerview-v7-21.0.2" level="project" />
+    <orderEntry type="library" exported="" name="android-async-http-1.4.4" level="project" />
     <orderEntry type="library" exported="" name="asne-facebook-0.3.3" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-21.0.2" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.1.2" level="project" />
+    <orderEntry type="library" exported="" name="com.android.volley-2015.02.02" level="project" />
+    <orderEntry type="library" exported="" name="cardview-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="asne-core-0.3.3" level="project" />
     <orderEntry type="library" exported="" name="twitter4j-core-4.0.2" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-21.0.2" level="project" />
   </component>
 </module>
 
