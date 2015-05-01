@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.example.jose.myapplication.R;
 import com.example.jose.myapplication.adapters.TabsPagerAdapter;
@@ -28,6 +29,8 @@ public class CitaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cita_tabs, container, false);
+        TextView titleFragment=(TextView)getActivity().findViewById(R.id.titulo_fragmento);
+        titleFragment.setText("Cita para donar");
         return rootView;
     }
 

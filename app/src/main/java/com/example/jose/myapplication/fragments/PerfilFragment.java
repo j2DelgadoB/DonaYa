@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.jose.myapplication.PrincipalActivity;
 import com.example.jose.myapplication.R;
@@ -46,7 +47,8 @@ public class PerfilFragment extends Fragment{
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_edit_perfil, container, false);
         //findview tipoSangre
-
+        TextView titleFragment=(TextView)getActivity().findViewById(R.id.titulo_fragmento);
+        titleFragment.setText("Perfil");
         return rootView;
     }
 

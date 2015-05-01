@@ -2,24 +2,31 @@ package com.example.jose.myapplication.adapters;
 
 
 import android.app.Activity;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.AsyncTask;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.jose.myapplication.R;
+import com.example.jose.myapplication.fragments.PerfilFragment;
 import com.example.jose.myapplication.models.HeaderItem;
 import com.example.jose.myapplication.utils.AppController;
 import com.example.jose.myapplication.utils.BitmapTransform;
 import com.squareup.picasso.Picasso;
+
+import net.i2p.android.ext.floatingactionbutton.AddFloatingActionButton;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -42,6 +49,7 @@ import java.util.ArrayList;
     //ImageLoader imageLoader2 = AppController.getInstance().getImageLoader();
     Activity activity;
     private int itemLayout;
+    private int buttonLoaderVisibility=0;
     private static final int MAX_WIDTH = 1024;
     private static final int MAX_HEIGHT = 768;
     public RecyclerHolderHeaderAdapter(ArrayList<HeaderItem> list_header, int itemLayout){
@@ -54,6 +62,12 @@ import java.util.ArrayList;
         this.itemLayout=itemLayout;
         this.activity = activity;
     }
+    public RecyclerHolderHeaderAdapter(int buttonLoaderVisibility,ArrayList<HeaderItem> list_header, int itemLayout, Activity activity){
+        this.list_header=list_header;
+        this.itemLayout=itemLayout;
+        this.activity = activity;
+        this.buttonLoaderVisibility=buttonLoaderVisibility;
+    }
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(itemLayout,viewGroup,false);
@@ -63,7 +77,10 @@ import java.util.ArrayList;
     @Override
     public void onBindViewHolder(final RecyclerViewHolder recyclerViewHolder, int i) {
         //accion
-
+        if (buttonLoaderVisibility!=0)
+            setButtonsLoadEnable();
+        else
+            setButtonsLoadDisable();
 
        // RecyclerViewHolder.webTitulo.setText(list_web.get(i).getWebTitulo());
        // pintarImagen pI= new pintarImagen(i);
@@ -100,12 +117,45 @@ import java.util.ArrayList;
         protected static NetworkImageView webImagen;
         protected static NetworkImageView webImagenFondo;
        // protected static TextView webTitulo;
+        protected static AddFloatingActionButton buttonLoadFoto,buttonLoadFondo;
+        protected static Button upload;
         public RecyclerViewHolder(View v) {
             super(v);
             webImagen=(NetworkImageView) v.findViewById(R.id.imageFoto);
             webImagenFondo=(NetworkImageView) v.findViewById(R.id.imageFondo);
             //webTitulo=(TextView) v.findViewById(R.id.txt);
+            buttonLoadFoto=(AddFloatingActionButton) v.findViewById(R.id.buttonLoadPicture);
+            buttonLoadFondo=(AddFloatingActionButton)v.findViewById(R.id.buttonLoadPicture2);
+            upload=(Button)v.findViewById(R.id.upload);
         }
+    }
+
+    public void setButtonsLoadDisable(){
+
+
+        RecyclerViewHolder.upload.setVisibility(View.GONE);
+
+
+        RecyclerViewHolder.buttonLoadFoto.setVisibility(View.GONE);
+
+
+        RecyclerViewHolder.buttonLoadFondo.setVisibility(View.GONE);
+
+
+    }
+
+    public void setButtonsLoadEnable(){
+
+
+        RecyclerViewHolder.upload.setVisibility(View.VISIBLE);
+
+
+        RecyclerViewHolder.buttonLoadFoto.setVisibility(View.VISIBLE);
+
+
+        RecyclerViewHolder.buttonLoadFondo.setVisibility(View.VISIBLE);
+
+
     }
 
  }

@@ -44,13 +44,15 @@ public class HeaderFragment  extends Fragment {
     private String urlFondo,urlFoto;
     ImageView photo,background;
     ArrayList<HeaderItem> list_header = new ArrayList<HeaderItem>();
-
+    private int visibilidad=0;
     ProgressDialog prgDialog;
     RequestParams params = new RequestParams();
     public HeaderFragment(){
 
     }
-
+    public HeaderFragment(int buttonsLoaderEdit){
+        visibilidad=buttonsLoaderEdit;
+    }
 
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class HeaderFragment  extends Fragment {
         prgDialog = new ProgressDialog(getActivity());
         // Set Cancelable as False
         prgDialog.setCancelable(false);
+
 
         return rootView;
     }
@@ -68,7 +71,7 @@ public class HeaderFragment  extends Fragment {
         cargarHeader.execute();
         RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view_fondo_foto);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new RecyclerHolderHeaderAdapter(list_header, R.layout.item_fondo_foto));
+        recyclerView.setAdapter(new RecyclerHolderHeaderAdapter(visibilidad,list_header, R.layout.item_fondo_foto,getActivity()));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -138,7 +141,7 @@ public class HeaderFragment  extends Fragment {
 
             RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view_fondo_foto);
             recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(new RecyclerHolderHeaderAdapter(list_header, R.layout.item_fondo_foto,getActivity()));
+            recyclerView.setAdapter(new RecyclerHolderHeaderAdapter(visibilidad,list_header, R.layout.item_fondo_foto,getActivity()));
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             //displayView(5);

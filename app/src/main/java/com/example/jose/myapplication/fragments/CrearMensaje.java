@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.R.layout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jose.myapplication.PrincipalActivity;
@@ -41,7 +42,8 @@ public class CrearMensaje extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_crear_mensaje, container, false);
-
+        TextView titleFragment=(TextView)getActivity().findViewById(R.id.titulo_fragmento);
+        titleFragment.setText("Solicitar donante");
         Button boton= (Button) rootView.findViewById(R.id.btnCrearPost);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override

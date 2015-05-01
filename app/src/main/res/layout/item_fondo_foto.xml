@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <com.android.volley.toolbox.NetworkImageView
         android:layout_width="fill_parent"
         android:layout_height="150dp"
@@ -24,4 +25,47 @@
         android:cropToPadding="true"
         android:scaleType="centerCrop"
         />
+    <net.i2p.android.ext.floatingactionbutton.AddFloatingActionButton
+        android:visibility="gone"
+        android:layout_alignLeft="@+id/imageFoto"
+        android:layout_alignStart="@+id/imageFoto"
+        android:layout_marginLeft="47dp"
+        android:id="@+id/buttonLoadPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:onClick="loadImagefromGallery"
+        android:text="Load Photo"
+        fab:fab_plusIconColor="@color/white"
+        fab:fab_colorNormal="@color/blue_semi_transparent"
+        fab:fab_colorPressed="@color/blue_semi_transparent_pressed"
+        fab:fab_addButtonSize="mini"
+        android:layout_above="@+id/upload"
+
+        />
+
+    <net.i2p.android.ext.floatingactionbutton.AddFloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/buttonLoadPicture2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:onClick="loadImagefromGallery2"
+        android:text="Load Background"
+        fab:fab_plusIconColor="@color/white"
+        fab:fab_colorNormal="@color/pink"
+        fab:fab_colorPressed="@color/pink_pressed"
+        fab:fab_addButtonSize="mini"
+        />
+    <Button
+        android:visibility="gone"
+        android:layout_below="@+id/imageFondo"
+        android:id="@+id/upload"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="uploadImage"
+        android:text="Upload" />
 </RelativeLayout>

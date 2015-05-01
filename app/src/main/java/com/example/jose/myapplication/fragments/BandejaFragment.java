@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jose.myapplication.R;
@@ -44,6 +45,8 @@ public class BandejaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_bandeja, container, false);
+        TextView titleFragment=(TextView)getActivity().findViewById(R.id.titulo_fragmento);
+        titleFragment.setText("Bandeja");
         //siempre ejecutando un hilo para que se muestre los mensajes de los posts actualizados de la base de datos
        mostrarPost post= new mostrarPost();
        post.execute();
