@@ -284,8 +284,8 @@ public class ProfileFragment extends Fragment implements OnRequestSocialPersonCo
 
             try {
                 //  json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php","GET",par);
-                  json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/registro_perfil.php","GET",par);
-                Log.d("Mi json:", json.toString());
+                  json=jParser.makeHttpRequest("http://104.131.187.32/SoyDonante/registro_user_perfil.php","POST",par);
+                //Log.d("Mi json:", json.toString());
                 int success = json.getInt("success");
                 if (success==1){
                     Log.d("","se guardo en la base de datos correctamente");

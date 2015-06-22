@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/idUserRpta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+    />
+
+    <QuickContactBadge
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/foto"
+        android:src="@drawable/quickcontactbadge"
+        android:layout_alignBottom="@+id/list_item_respuesta_textview"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:text="@string/respuesta"
+        android:layout_marginTop="25dp"
+        android:padding="10dp"
+        android:id="@+id/list_item_respuesta_textview"
+        android:layout_below="@+id/textSolicitud"
+        android:layout_toRightOf="@+id/foto"
+        android:layout_toEndOf="@+id/foto" />
+
+
+        <Button
+            android:id="@+id/btnAddContact"
+            android:background="@color/accent"
+            android:textSize="15dp"
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:text="+"
+            android:layout_alignBottom="@+id/foto"
+            android:layout_toLeftOf="@+id/list_item_respuesta_textview"
+            android:layout_toStartOf="@+id/list_item_respuesta_textview" />
+
+    <TextView
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Nombre Apellido"
+        android:id="@+id/tvNombreRpta"
+        android:layout_above="@+id/foto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/list_item_respuesta_textview"
+        android:layout_toLeftOf="@+id/list_item_respuesta_textview"
+        android:layout_toStartOf="@+id/list_item_respuesta_textview" />
+
+
+</RelativeLayout><!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/layout/list_item_respuesta.xml -->

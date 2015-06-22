@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/header_bg"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageFondo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        />
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/user"
+        android:id="@+id/imageFoto"
+        android:layout_alignBottom="@+id/imageFondo"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        />
+    <net.i2p.android.ext.floatingactionbutton.AddFloatingActionButton
+        android:visibility="gone"
+        android:layout_alignLeft="@+id/imageFoto"
+        android:layout_alignStart="@+id/imageFoto"
+        android:layout_marginLeft="47dp"
+        android:id="@+id/buttonLoadPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:onClick="loadImagefromGallery"
+        android:text="Load Photo"
+        fab:fab_plusIconColor="@color/white"
+        fab:fab_colorNormal="@color/blue_semi_transparent"
+        fab:fab_colorPressed="@color/blue_semi_transparent_pressed"
+        fab:fab_addButtonSize="mini"
+        android:layout_above="@+id/upload"
+
+        />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/buttonLoadPicture2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:onClick="loadImagefromGallery2"
+        android:text="Load Background"
+        />
+    <Button
+        android:visibility="gone"
+        android:layout_below="@+id/imageFondo"
+        android:id="@+id/upload"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="uploadImage"
+        android:text="Upload" />
+</RelativeLayout><!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/layout/item_fondo_foto.xml -->

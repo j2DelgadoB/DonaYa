@@ -26,7 +26,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login Social"
+        android:text="Login"
         />
 
     <View
@@ -35,67 +35,6 @@
         android:layout_height="1dp"
         android:background="@android:color/black">
     </View>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFCCCCCC">
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Login via Facebook"
-            android:id="@+id/facebook"
-            android:layout_gravity="center_horizontal"
-            android:background="#3b5998"
-            android:layout_margin="8dp"
-            android:textColor="#ffffffff" />
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Login via Twitter"
-            android:id="@+id/twitter"
-            android:layout_gravity="center_horizontal"
-            android:background="#55ACEE"
-            android:layout_margin="8dp"
-            android:textColor="#ffffffff"/>
-        <Button
-            android:visibility="gone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Login via LinkedIn"
-            android:id="@+id/linkedin"
-            android:layout_gravity="center_horizontal"
-            android:background="#287bbc"
-            android:layout_margin="8dp"
-            android:textColor="#ffffffff"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Login via GooglePlus"
-            android:id="@+id/googleplus"
-            android:layout_gravity="center_horizontal"
-            android:background="#D34836"
-            android:layout_margin="8dp"
-            android:textColor="#ffffffff"/>
-    </LinearLayout>
-
-    <TextView
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="O\nLogin Normal"
-    />
-
-    <View
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black">
-    </View>
-
 
     <EditText
         android:layout_width="wrap_content"
@@ -137,6 +76,68 @@
         android:id="@+id/btnRegistrarse"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="O\nLogin Social"
+    />
+
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black">
+    </View>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFCCCCCC">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Login via Facebook"
+            android:id="@+id/facebook"
+            android:layout_gravity="center_horizontal"
+            android:background="#3b5998"
+            android:layout_margin="8dp"
+            android:textColor="#ffffffff" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Login via Twitter"
+            android:id="@+id/twitter"
+            android:layout_gravity="center_horizontal"
+            android:background="#55ACEE"
+            android:layout_margin="8dp"
+            android:textColor="#ffffffff"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Login via GooglePlus"
+            android:id="@+id/googleplus"
+            android:layout_gravity="center_horizontal"
+            android:background="#D34836"
+            android:layout_margin="8dp"
+            android:textColor="#ffffffff"/>
+        <Button
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Login via LinkedIn"
+            android:id="@+id/linkedin"
+            android:layout_gravity="center_horizontal"
+            android:background="#287bbc"
+            android:layout_margin="8dp"
+            android:textColor="#ffffffff"/>
+    </LinearLayout>
 
 </TableLayout>
 </ScrollView>

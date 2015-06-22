@@ -1,0 +1,55 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@+id/tabsHome"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+
+        <EditText
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Distrito"
+            android:ems="10"
+            android:id="@+id/cita2_Distrito" />
+
+        <DatePicker
+            android:layout_marginTop="10dp"
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker_cita2"
+            android:layout_column="0"
+            android:datePickerMode="spinner"
+            />
+
+        <TimePicker
+            android:paddingRight="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker_cita2"
+            android:timePickerMode="spinner"
+            />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Siguiente"
+            android:id="@+id/btnNextCita2"
+            />
+
+    </TableLayout>
+</ScrollView><!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/layout/fragment_cita2.xml -->

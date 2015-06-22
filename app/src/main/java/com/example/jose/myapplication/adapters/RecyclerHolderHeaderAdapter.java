@@ -94,7 +94,11 @@ import java.util.ArrayList;
         RecyclerViewHolder.webImagenFondo.setImageUrl(list_header.get(i).getUrlFondo(),imageLoader);
         Log.d("url fondo",list_header.get(i).getUrlFondo());
         //Picasso.with(activity).load(list_header_fondo.get(i).getUrlFoto()).into(RecyclerViewHolder.webImagenFondo);
+        RecyclerViewHolder.webImagen.setDefaultImageResId(R.drawable.user);
+        RecyclerViewHolder.webImagenFondo.setDefaultImageResId(R.drawable.header_bg);
 
+        RecyclerViewHolder.webImagen.setErrorImageResId(R.drawable.user);
+        RecyclerViewHolder.webImagenFondo.setErrorImageResId(R.drawable.header_bg);
 
     /*    int size = (int) Math.ceil(Math.sqrt(MAX_WIDTH * MAX_HEIGHT));
 
@@ -117,7 +121,8 @@ import java.util.ArrayList;
         protected static NetworkImageView webImagen;
         protected static NetworkImageView webImagenFondo;
        // protected static TextView webTitulo;
-        protected static AddFloatingActionButton buttonLoadFoto,buttonLoadFondo;
+        protected static AddFloatingActionButton buttonLoadFoto;
+        protected static Button buttonLoadFondo;
         protected static Button upload;
         public RecyclerViewHolder(View v) {
             super(v);
@@ -125,7 +130,7 @@ import java.util.ArrayList;
             webImagenFondo=(NetworkImageView) v.findViewById(R.id.imageFondo);
             //webTitulo=(TextView) v.findViewById(R.id.txt);
             buttonLoadFoto=(AddFloatingActionButton) v.findViewById(R.id.buttonLoadPicture);
-            buttonLoadFondo=(AddFloatingActionButton)v.findViewById(R.id.buttonLoadPicture2);
+            buttonLoadFondo=(Button)v.findViewById(R.id.buttonLoadPicture2);
             upload=(Button)v.findViewById(R.id.upload);
         }
     }

@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginActivity" >
+    <item android:id="@+id/action_logout"
+        android:title="Logout"
+        app:showAsAction="always" />
+</menu>
+<!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/menu/main_social.xml -->

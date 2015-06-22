@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.19.1\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="44fd589d7c4f5bf1aa2df0167315a1b1e1a20d83">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-589b5aba9e61b8fe812086fbb9ae4e3e3fdc2a1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e5d1cc975ceacc381f9e3d747132e0bccbd57765">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-4d7ad8e8836cbb30b19d9be6113d420f36ed151b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-googleplus\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="23d93de6f3ad242c266db371dbe34fcbe2605503">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-552cab0ad1538315e9a81d885f8afe0e38f396cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\eu.the4thfloor.volley\com.android.volley\2015.02.02\55c0799a03e6a3d7e33e31dde5a3edfdb5701f84\com.android.volley-2015.02.02.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="55c0799a03e6a3d7e33e31dde5a3edfdb5701f84">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\com.android.volley-2015.02.02-6df29ad178d2f7f431ed0f45d824ab6ff0a77f8b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-c0733b35ec3f9e1ac43902adcb978671a2f5a8ec.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6b6c99fc3fe35a8647349625e8db7102df9cc2fa">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-5d925dbdc69203668eb833553d9c804778148125.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\org.twitter4j\twitter4j-core\4.0.2\6555e7c45f5db0006823731b2ddb536d481e11d1\twitter4j-core-4.0.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6555e7c45f5db0006823731b2ddb536d481e11d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\twitter4j-core-4.0.2-7b2482f3aacbdbff9ac980f6d8a6f3a44853569b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-cbdee89142b427f4702c9f066a206382a99b6065.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-facebook\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="6ff43b52f1ae802e5c16eb12e7215eedcf08fa51">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-9aff99406cd2b1fa02f2b1141ebeda200d0859d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-core-1.2.1.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="47d92007ca13efd47efad1af94d842ecb5066310">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-core-1.2.1.1-d9e41a0c0600c10e1e58f92c8acd70fd1d203caf.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-48f9a33f9fd4aedb26af8b6c0c5794119c2e518b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.19.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="44fd589d7c4f5bf1aa2df0167315a1b1e1a20d83">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-589b5aba9e61b8fe812086fbb9ae4e3e3fdc2a1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\libs\linkedin-j-android-1.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="13bae5a8934c403ab39853974dd6e798d2217ae7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\linkedin-j-android-1.0-c442b92cbc9b4206a39bb69b4ce603ee613bf4d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-25e6d2e203fdf5a763bb073a581243d3a7355a36.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-c0733b35ec3f9e1ac43902adcb978671a2f5a8ec.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\eu.the4thfloor.volley\com.android.volley\2015.02.02\55c0799a03e6a3d7e33e31dde5a3edfdb5701f84\com.android.volley-2015.02.02.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="55c0799a03e6a3d7e33e31dde5a3edfdb5701f84">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\com.android.volley-2015.02.02-6df29ad178d2f7f431ed0f45d824ab6ff0a77f8b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-14ca910de0c9124fc8682cc19857d50ecd5cf04b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-facebook\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6ff43b52f1ae802e5c16eb12e7215eedcf08fa51">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-9aff99406cd2b1fa02f2b1141ebeda200d0859d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\net.i2p.android.ext\floatingactionbutton\1.9.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7c5e4db194c6ec3e62b70759ef913381ea4903d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8a6294b5ce129b2331a420ff7e1a566f47220805.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\libs\linkedin-j-android-1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="13bae5a8934c403ab39853974dd6e798d2217ae7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\linkedin-j-android-1.0-c442b92cbc9b4206a39bb69b4ce603ee613bf4d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e5d1cc975ceacc381f9e3d747132e0bccbd57765">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-4d7ad8e8836cbb30b19d9be6113d420f36ed151b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-48f9a33f9fd4aedb26af8b6c0c5794119c2e518b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-twitter\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="842ae6cb005a3f5cc06d6eaf0ea062b3b46227e3">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8878fea2e8d23a913cd45860b4d0a43e8b1080dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-core-1.2.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="47d92007ca13efd47efad1af94d842ecb5066310">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-core-1.2.1.1-d9e41a0c0600c10e1e58f92c8acd70fd1d203caf.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\library-2.4.0-e883a09c0a387dabf2d15a7278db543e37b9971c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-25e6d2e203fdf5a763bb073a581243d3a7355a36.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7676c0cb230efa6ac41c47867d372ed5913029d4">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-77481ebfe0a79ea198730d42ba8f9a1a171f3e05.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6b6c99fc3fe35a8647349625e8db7102df9cc2fa">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-5d925dbdc69203668eb833553d9c804778148125.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-twitter\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="842ae6cb005a3f5cc06d6eaf0ea062b3b46227e3">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8878fea2e8d23a913cd45860b4d0a43e8b1080dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-commonshttp4-1.2.1.1.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1e6380adcb5808bfe13a934a2f35bfeed1adbc49">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-commonshttp4-1.2.1.1-0b2f9d5c0ac18076038eb0b742b1e13ad9654723.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\net.i2p.android.ext\floatingactionbutton\1.9.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7c5e4db194c6ec3e62b70759ef913381ea4903d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8a6294b5ce129b2331a420ff7e1a566f47220805.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-googleplus\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="23d93de6f3ad242c266db371dbe34fcbe2605503">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-552cab0ad1538315e9a81d885f8afe0e38f396cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="7676c0cb230efa6ac41c47867d372ed5913029d4">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-77481ebfe0a79ea198730d42ba8f9a1a171f3e05.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-commonshttp4-1.2.1.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="1e6380adcb5808bfe13a934a2f35bfeed1adbc49">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-commonshttp4-1.2.1.1-0b2f9d5c0ac18076038eb0b742b1e13ad9654723.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-78fba5a59858d8728cfc5b5d09ac27316fb64657.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\org.twitter4j\twitter4j-core\4.0.2\6555e7c45f5db0006823731b2ddb536d481e11d1\twitter4j-core-4.0.2.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="6555e7c45f5db0006823731b2ddb536d481e11d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\twitter4j-core-4.0.2-7b2482f3aacbdbff9ac980f6d8a6f3a44853569b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-c0733b35ec3f9e1ac43902adcb978671a2f5a8ec.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5d1cc975ceacc381f9e3d747132e0bccbd57765">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-4d7ad8e8836cbb30b19d9be6113d420f36ed151b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.19.1\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="44fd589d7c4f5bf1aa2df0167315a1b1e1a20d83">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-589b5aba9e61b8fe812086fbb9ae4e3e3fdc2a1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-googleplus\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="23d93de6f3ad242c266db371dbe34fcbe2605503">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-552cab0ad1538315e9a81d885f8afe0e38f396cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\eu.the4thfloor.volley\com.android.volley\2015.02.02\55c0799a03e6a3d7e33e31dde5a3edfdb5701f84\com.android.volley-2015.02.02.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="55c0799a03e6a3d7e33e31dde5a3edfdb5701f84">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\com.android.volley-2015.02.02-6df29ad178d2f7f431ed0f45d824ab6ff0a77f8b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6b6c99fc3fe35a8647349625e8db7102df9cc2fa">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-5d925dbdc69203668eb833553d9c804778148125.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-48f9a33f9fd4aedb26af8b6c0c5794119c2e518b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\org.twitter4j\twitter4j-core\4.0.2\6555e7c45f5db0006823731b2ddb536d481e11d1\twitter4j-core-4.0.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6555e7c45f5db0006823731b2ddb536d481e11d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\twitter4j-core-4.0.2-7b2482f3aacbdbff9ac980f6d8a6f3a44853569b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-core-1.2.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="47d92007ca13efd47efad1af94d842ecb5066310">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-core-1.2.1.1-d9e41a0c0600c10e1e58f92c8acd70fd1d203caf.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\libs\linkedin-j-android-1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="13bae5a8934c403ab39853974dd6e798d2217ae7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\linkedin-j-android-1.0-c442b92cbc9b4206a39bb69b4ce603ee613bf4d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-25e6d2e203fdf5a763bb073a581243d3a7355a36.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\library-2.4.0-e883a09c0a387dabf2d15a7278db543e37b9971c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-facebook\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6ff43b52f1ae802e5c16eb12e7215eedcf08fa51">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-9aff99406cd2b1fa02f2b1141ebeda200d0859d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.19.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="44fd589d7c4f5bf1aa2df0167315a1b1e1a20d83">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-589b5aba9e61b8fe812086fbb9ae4e3e3fdc2a1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\libs\android-async-http-1.4.4.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-c0733b35ec3f9e1ac43902adcb978671a2f5a8ec.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-facebook\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6ff43b52f1ae802e5c16eb12e7215eedcf08fa51">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-9aff99406cd2b1fa02f2b1141ebeda200d0859d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\eu.the4thfloor.volley\com.android.volley\2015.02.02\55c0799a03e6a3d7e33e31dde5a3edfdb5701f84\com.android.volley-2015.02.02.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="55c0799a03e6a3d7e33e31dde5a3edfdb5701f84">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\com.android.volley-2015.02.02-6df29ad178d2f7f431ed0f45d824ab6ff0a77f8b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-twitter\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="842ae6cb005a3f5cc06d6eaf0ea062b3b46227e3">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8878fea2e8d23a913cd45860b4d0a43e8b1080dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\libs\linkedin-j-android-1.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="13bae5a8934c403ab39853974dd6e798d2217ae7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\linkedin-j-android-1.0-c442b92cbc9b4206a39bb69b4ce603ee613bf4d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-48f9a33f9fd4aedb26af8b6c0c5794119c2e518b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e5d1cc975ceacc381f9e3d747132e0bccbd57765">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-4d7ad8e8836cbb30b19d9be6113d420f36ed151b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-core-1.2.1.1.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="47d92007ca13efd47efad1af94d842ecb5066310">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-core-1.2.1.1-d9e41a0c0600c10e1e58f92c8acd70fd1d203caf.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-25e6d2e203fdf5a763bb073a581243d3a7355a36.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\library-2.4.0-e883a09c0a387dabf2d15a7278db543e37b9971c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-0ce9a3c295ae7e20069aca37667f9f81a04f12ad.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7676c0cb230efa6ac41c47867d372ed5913029d4">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-77481ebfe0a79ea198730d42ba8f9a1a171f3e05.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-twitter\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="842ae6cb005a3f5cc06d6eaf0ea062b3b46227e3">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8878fea2e8d23a913cd45860b4d0a43e8b1080dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-linkedin\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="6b6c99fc3fe35a8647349625e8db7102df9cc2fa">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-5d925dbdc69203668eb833553d9c804778148125.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-commonshttp4-1.2.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1e6380adcb5808bfe13a934a2f35bfeed1adbc49">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-commonshttp4-1.2.1.1-0b2f9d5c0ac18076038eb0b742b1e13ad9654723.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\net.i2p.android.ext\floatingactionbutton\1.9.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7c5e4db194c6ec3e62b70759ef913381ea4903d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-8a6294b5ce129b2331a420ff7e1a566f47220805.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-googleplus\0.3.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="23d93de6f3ad242c266db371dbe34fcbe2605503">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-552cab0ad1538315e9a81d885f8afe0e38f396cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7676c0cb230efa6ac41c47867d372ed5913029d4">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-77481ebfe0a79ea198730d42ba8f9a1a171f3e05.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.github.asne\asne-core\0.3.3\libs\signpost-commonshttp4-1.2.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e6380adcb5808bfe13a934a2f35bfeed1adbc49">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\signpost-commonshttp4-1.2.1.1-0b2f9d5c0ac18076038eb0b742b1e13ad9654723.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\classes-de7a3d5bd4380bd195fe7d39ef70aeb81aed7143.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-1e4f87c65b10d709919958877859d63a6baa72e1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jose\.gradle\caches\modules-2\files-2.1\org.twitter4j\twitter4j-core\4.0.2\6555e7c45f5db0006823731b2ddb536d481e11d1\twitter4j-core-4.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6555e7c45f5db0006823731b2ddb536d481e11d1">
+        <dex dex="C:\Users\jose\Android studioProjects\SoyDonante\app\build\intermediates\pre-dexed\debug\twitter4j-core-4.0.2-7b2482f3aacbdbff9ac980f6d8a6f3a44853569b.jar" />
+    </item>
+
+</items>

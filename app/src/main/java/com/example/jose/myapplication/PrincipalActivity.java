@@ -441,7 +441,6 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
             return null;
         }
         /*
-
          */
         protected void onPostExecute(String file_url) {
 
@@ -477,7 +476,6 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
             return null;
         }
         /*
-
          */
         protected void onPostExecute(String file_url) {
             //
@@ -573,7 +571,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
                 if (fileName2!=null)
                     params.put("filenameFondo", fileName2);
 
-                params.put("username",carpetaUsername);
+                params.put("username",getIntent().getStringExtra("MyUsername"));
                 params.put("idUser",getIntent().getStringExtra("MyID"));
 
             } else {
@@ -665,7 +663,7 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
         prgDialog.setMessage("Invoking Php");
         AsyncHttpClient client = new AsyncHttpClient();
         // Don't forget to change the IP address to your LAN address. Port no as well.
-        client.post("http://isulamotors.com.pe/SoyDonante/upload_image.php",
+        client.post("http://104.131.187.32/SoyDonante/upload_image.php",
                 params, new AsyncHttpResponseHandler() {
                     // When the response returned by REST has Http
                     // response code '200'
@@ -729,14 +727,14 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
             par.add(new BasicNameValuePair("idUser", getIntent().getStringExtra("MyID")));
             try {
                 //json = jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/get_perfil.php", "POST", par);
-                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/get_perfil.php","POST",par);
+                json=jParser.makeHttpRequest("http://104.131.187.32/SoyDonante/get_perfil.php","POST",par);
                 Log.d("mi json cargar perfil", json.toString());
                 int success = json.getInt("success");
                 if (success == 1) {
                     PerfilListJson = json.getJSONArray("dataPerfil");
                     for (int i = 0; i < PerfilListJson.length(); i++) {
                         JSONObject c = PerfilListJson.getJSONObject(i);
-                        Log.d("nom Perfil", c.getString("nombres"));
+                        Log.d("miNombredeUsuario", c.getString("username"));
                         carpetaUsername= c.getString("username");
                     }
                 }
@@ -760,3 +758,5 @@ public class PrincipalActivity extends ActionBarActivity implements ActionBar.Ta
     }
 
 }
+
+

@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item
+        android:id="@+id/closessesion"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_lock_idle_lock"
+        android:title="Cerrar sesion"/>
+
+
+</menu>
+<!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/menu/menu_main.xml -->

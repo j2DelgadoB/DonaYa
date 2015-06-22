@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@+id/tabsHome"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <EditText
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nombres"
+            android:ems="10"
+            android:id="@+id/editNombresCita3" />
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Apellidos"
+                android:ems="10"
+                android:id="@+id/editApellidosCita3"
+                android:layout_marginTop="15dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerTipoSangreCita3"
+            android:layout_marginTop="40dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:hint="Email"
+            android:id="@+id/editemailCita3"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:hint="Telefono"
+            android:id="@+id/editphoneCita3"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Terminar"
+            android:id="@+id/btnTerminarCita"
+            android:layout_marginTop="15dp"
+            />
+    </TableLayout>
+</ScrollView><!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/layout/fragment_cita3.xml -->

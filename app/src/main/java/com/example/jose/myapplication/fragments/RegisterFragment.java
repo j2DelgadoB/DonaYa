@@ -61,7 +61,7 @@ public class RegisterFragment extends android.support.v4.app.Fragment {
             par.add(new BasicNameValuePair("email",email.getText().toString()));
             try {
                 //json = jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/registro_perfil.php", "GET", par);
-                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/registro_perfil.php","GET",par);
+                json=jParser.makeHttpRequest("http://104.131.187.32/SoyDonante/registro_user_perfil.php","POST",par);
 
                 Log.d("mi json ", json.toString());
                 int success = json.getInt("success");

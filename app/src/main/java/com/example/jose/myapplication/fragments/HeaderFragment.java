@@ -96,7 +96,7 @@ public class HeaderFragment  extends Fragment {
             try {
                 webImagenFondo=(NetworkImageView) getActivity().findViewById(R.id.imageFondo);
                // json1 = jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/get_perfil.php", "POST", par);
-                json1=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/get_perfil.php","POST",par);
+                json1=jParser.makeHttpRequest("http://104.131.187.32/SoyDonante/get_perfil.php","POST",par);
                 Log.d("mi json cargar imagen", json1.toString());
                 int success = json1.getInt("success");
                 if (success == 1) {

@@ -94,7 +94,7 @@ public class Cita3Fragment extends Fragment {
 
             try {
                 //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/crear_cita.php","GET",par);
-                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/crear_cita.php","GET",par);
+                json=jParser.makeHttpRequest("http://104.131.187.32/SoyDonante/crear_cita.php","GET",par);
                 Log.d("Mi json 1:", json.toString());
                 int success = json.getInt("success");
                 if (success==1){

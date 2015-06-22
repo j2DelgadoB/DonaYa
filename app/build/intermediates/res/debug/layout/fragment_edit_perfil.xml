@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_below="@+id/tabsHome"
+    android:layout_height="fill_parent">
+    <TableLayout
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <Button
+            android:id="@+id/btnEditSocial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Editar cuentas de redes sociales"
+        />
+
+        <EditText
+            android:layout_marginTop="15dp"
+            android:hint="Nombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editPerfilnom"
+         />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:hint="Nombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editPerfilape"
+        />
+        <Spinner
+            android:layout_marginTop="40dp"
+            android:hint="O+"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editPerfilTipoSangre"
+        />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:hint="Alan@hotmail.com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editPerfilEmail"
+        />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editPerfilTel"
+        />
+        <Button
+            android:id="@+id/btnPerfilSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Guardar"
+        />
+
+    </TableLayout>
+</ScrollView><!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/layout/fragment_edit_perfil.xml -->

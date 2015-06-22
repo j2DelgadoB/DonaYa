@@ -1,0 +1,63 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_below="@+id/tabsHome"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jose.myapplication.fragments.CrearMensaje">
+
+    <TableRow>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nombres"
+        android:ems="10"
+        android:id="@+id/crearPostNombres" />
+    </TableRow>
+    <TableRow>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Apellidos"
+        android:ems="10"
+        android:id="@+id/crearPostApellido"
+        android:layout_marginTop="46dp"/>
+    </TableRow>
+    <TableRow>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerCrearPost"
+        android:layout_marginTop="48dp" />
+    </TableRow>
+    <TableRow>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Telefono"
+        android:ems="10"
+        android:id="@+id/crearPostTel"
+        android:layout_marginTop="52dp" />
+    </TableRow>
+    <TableRow>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enviar"
+        android:id="@+id/btnCrearPost"
+        android:layout_marginTop="41dp"
+     />
+    </TableRow>
+    </TableLayout>
+</ScrollView><!-- From: file:/C:/Users/jose/Android%20studioProjects/SoyDonante/app/src/main/res/layout/fragment_crear_mensaje.xml -->

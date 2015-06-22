@@ -96,7 +96,7 @@ public class BandejaFragment extends Fragment {
             par.add(new BasicNameValuePair("mostrar_todo","1"));
             try {
                 //json=jParser.makeHttpRequest("http://10.0.2.2:1000/SoyDonante/mostrar_all_post.php","POST",par);
-                json=jParser.makeHttpRequest("http://isulamotors.com.pe/SoyDonante/mostrar_all_post.php","POST",par);
+                json=jParser.makeHttpRequest("http://104.131.187.32/SoyDonante/mostrar_all_post.php","POST",par);
                 Log.d("Mi json 1:", json.toString());
                 int success = json.getInt("success");
                 if (success==1){

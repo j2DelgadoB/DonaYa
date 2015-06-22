@@ -45,7 +45,7 @@
 
         />
 
-    <net.i2p.android.ext.floatingactionbutton.AddFloatingActionButton
+    <Button
         android:visibility="gone"
         android:id="@+id/buttonLoadPicture2"
         android:layout_width="wrap_content"
@@ -54,10 +54,6 @@
         android:layout_weight="0"
         android:onClick="loadImagefromGallery2"
         android:text="Load Background"
-        fab:fab_plusIconColor="@color/white"
-        fab:fab_colorNormal="@color/pink"
-        fab:fab_colorPressed="@color/pink_pressed"
-        fab:fab_addButtonSize="mini"
         />
     <Button
         android:visibility="gone"
